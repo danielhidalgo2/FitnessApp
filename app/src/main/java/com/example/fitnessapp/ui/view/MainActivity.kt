@@ -1,4 +1,4 @@
-package com.example.fitnessapp
+package com.example.fitnessapp.ui.view
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -6,11 +6,7 @@ import android.os.Bundle
 import android.widget.TextView
 import android.text.SpannableString
 import android.text.style.UnderlineSpan
-
-
-
-
-
+import com.example.fitnessapp.R
 
 
 class MainActivity : AppCompatActivity() {
@@ -28,7 +24,7 @@ class MainActivity : AppCompatActivity() {
 
 
         gg.setOnClickListener {
-            val clase=Intent(this,Registro::class.java)
+            val clase=Intent(this, Registro::class.java)
             startActivity(clase)
         }
 
