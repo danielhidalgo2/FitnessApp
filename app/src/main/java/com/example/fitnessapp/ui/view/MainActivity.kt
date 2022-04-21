@@ -17,7 +17,7 @@ class MainActivity : AppCompatActivity() {
 
         val gg:TextView= findViewById(R.id.pregunta)
 
-        val mitextoU = SpannableString("¿No tienes cuenta en FitnessLife aùn? Crear cuenta")
+        val mitextoU = SpannableString("¿No tienes cuenta en FitnessLife aùnhola? Crear cuenta")
         mitextoU.setSpan(UnderlineSpan(), 0, mitextoU.length, 0)
         gg.setText(mitextoU)
 
