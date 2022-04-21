@@ -5,11 +5,16 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import com.example.fitnessapp.R
+import com.example.fitnessapp.databinding.ActivityPerfilBinding
+import com.example.fitnessapp.databinding.ActivityRegistroBinding
 
 class Registro : AppCompatActivity() {
+
+    private lateinit var binding: ActivityRegistroBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_registro)
+        binding = ActivityRegistroBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
 
         val boton :Button=findViewById(R.id.registrar)
@@ -18,6 +23,10 @@ class Registro : AppCompatActivity() {
             val intent =Intent(this,Perfil::class.java)
             startActivity(intent)
         }
+
+
+
+
 
     }
 }
