@@ -10,9 +10,11 @@ import android.widget.Toolbar
 import com.example.fitnessapp.databinding.ActivityMainBinding
 import com.example.fitnessapp.databinding.ActivityPerfilBinding
 import android.R
+import android.widget.Toast
 
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.annotation.NonNull
+import com.google.firebase.auth.FirebaseAuth
 
 
 class Perfil : AppCompatActivity() {
@@ -26,6 +28,9 @@ class Perfil : AppCompatActivity() {
         val bottomNav = binding.toolbar
         //le damos soporte con la funcion creada
         bottomNav.setOnNavigationItemSelectedListener(menuseleccion)
+
+
+
 
     }
 

@@ -9,9 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        <activity
-            android:name=".ui.view.jjkk"
-            android:exported="false" />
+
         <activity
             android:name=".ui.view.Ajustes"
             android:exported="false" />
@@ -24,10 +22,7 @@
         <activity
             android:name=".ui.view.Registro"
             android:exported="false" />
-        <activity
-            android:name=".ui.login.LoginActivity"
-            android:exported="false"
-            android:label="@string/title_activity_login" />
+
         <activity
             android:name=".ui.view.MainActivity"
             android:exported="true">
