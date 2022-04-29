@@ -6,6 +6,38 @@
     android:layout_height="match_parent"
     tools:context=".ui.view.Ajustes">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/ajustes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:text="Ajustes"
+            android:textColor="@color/black"
+            android:textSize="30dp"></TextView>
+
+        <Button
+            android:id="@+id/cerrarsesison"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="200dp"
+            android:background="@drawable/boton_redodndo"
+            android:text="CERRAR SESISON"></Button>
+
+        <Button
+            android:id="@+id/eliminarcuenta"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:background="@drawable/boton_redodndo"
+            android:text="ELIMINAR CUENTA"></Button>
+
+    </LinearLayout>
+
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:layout_width="match_parent"

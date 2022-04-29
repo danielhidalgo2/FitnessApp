@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.fitnessapp">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,7 +11,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-
+        <activity
+            android:name=".ui.view.Nutricion"
+            android:exported="false" />
+        <activity
+            android:name=".ui.view.Track"
+            android:exported="false" />
+        <activity
+            android:name=".ui.view.MainActivity2"
+            android:exported="false" />
+        <activity
+            android:name=".ui.view.Ejercicios"
+            android:exported="false" />
         <activity
             android:name=".ui.view.Ajustes"
             android:exported="false" />
@@ -22,7 +35,6 @@
         <activity
             android:name=".ui.view.Registro"
             android:exported="false" />
-
         <activity
             android:name=".ui.view.MainActivity"
             android:exported="true">

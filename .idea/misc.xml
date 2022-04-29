@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/6001965/AndroidStudioProjects/FitnessApp/app/src/main/res/drawable/boton_redodndo.xml" value="0.104" />
         <entry key="..\:/Users/6001965/AndroidStudioProjects/FitnessApp/app/src/main/res/drawable/logo.xml" value="0.19583333333333333" />
         <entry key="..\:/Users/6001965/AndroidStudioProjects/FitnessApp/app/src/main/res/layout-w1240dp/activity_login.xml" value="0.11546184738955824" />
         <entry key="..\:/Users/6001965/AndroidStudioProjects/FitnessApp/app/src/main/res/layout-w936dp/activity_login.xml" value="0.13148907103825136" />
@@ -10,8 +11,10 @@
         <entry key="..\:/Users/6001965/AndroidStudioProjects/FitnessApp/app/src/main/res/layout/activity_home.xml" value="0.17074275362318841" />
         <entry key="..\:/Users/6001965/AndroidStudioProjects/FitnessApp/app/src/main/res/layout/activity_login.xml" value="0.1743659420289855" />
         <entry key="..\:/Users/6001965/AndroidStudioProjects/FitnessApp/app/src/main/res/layout/activity_main.xml" value="0.22" />
+        <entry key="..\:/Users/6001965/AndroidStudioProjects/FitnessApp/app/src/main/res/layout/activity_main2.xml" value="0.1" />
         <entry key="..\:/Users/6001965/AndroidStudioProjects/FitnessApp/app/src/main/res/layout/activity_perfil.xml" value="0.22" />
         <entry key="..\:/Users/6001965/AndroidStudioProjects/FitnessApp/app/src/main/res/layout/activity_registro.xml" value="0.22" />
+        <entry key="..\:/Users/6001965/AndroidStudioProjects/FitnessApp/app/src/main/res/layout/item_ejercicicos.xml" value="0.1" />
         <entry key="..\:/Users/6001965/AndroidStudioProjects/FitnessApp/app/src/main/res/menu/menu_menu.xml" value="0.22" />
         <entry key="..\:/Users/6001965/AndroidStudioProjects/FitnessApp/app/src/main/res/menu/toolbar.xml" value="0.1796875" />
       </map>

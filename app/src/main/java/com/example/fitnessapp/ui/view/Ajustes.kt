@@ -21,6 +21,12 @@ class Ajustes : AppCompatActivity() {
         val bottomNav = binding.toolbar
         //le damos soporte con la funcion creada
         bottomNav.setOnNavigationItemSelectedListener(menuseleccion)
+
+
+        binding.cerrarsesison.setOnClickListener {
+            val  intent = Intent(this,MainActivity::class.java)
+            startActivity(intent)
+        }
     }
 
 
