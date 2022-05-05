@@ -77,7 +77,7 @@ class GananciaMuscular : AppCompatActivity() {
                         "INGREDIENTES:\n" +
                         "½ taza de Nueces peladas \n" +
                         "1 Plátano\n " +
-                        "1 Taza de leche de coco\n " +
+                        "1 Taza de leche de coco \n " +
                         "1 taza de moras azules\n " +
                         "½ cucharada de chía\n "
 
