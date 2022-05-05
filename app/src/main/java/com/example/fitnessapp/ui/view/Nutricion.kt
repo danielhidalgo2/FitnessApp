@@ -29,7 +29,7 @@ class Nutricion : AppCompatActivity() {
             Objetivosutricion("https://www.comedera.com/wp-content/uploads/2018/01/recetas-para-adelgazar.jpg","Perdida de peso")
         ,   Objetivosutricion("https://guiafitness.com/wp-content/uploads/cantidad-batidos-proteinas.jpg","Ganancia Muscular"),
             Objetivosutricion("https://archzine.es/wp-content/uploads/2020/04/alimentos-para-comer-cuando-entrenamos-ideas-de-comidas-saludables-y-faciles-de-preparar-en-casa-salmon-aguacate-espinacas-1.jpg","Altas en Proteinas")
-        ,   Objetivosutricion("https://www.cocinacaserayfacil.net/wp-content/uploads/2020/03/Mantener-un-estilo-de-vida-saludable-en-casa_4.jpg","Estilo de Vida Saludable")
+        ,   Objetivosutricion("https://www.cocinacaserayfacil.net/wp-content/uploads/2020/03/Mantener-un-estilo-de-vida-saludable-en-casa_4.jpg","Favoritos")
         )
         adapter= NutricionHolder(this,objetivos_nutricion)
         val lista = binding.recyclerview2
