@@ -5,7 +5,8 @@
     <item android:id="@+id/opcion1"
         android:title="perfil"
         android:icon="@drawable/ic_baseline_person_24"
-        android:iconTint="@color/white"
+
+
         />
 
     <item android:id="@+id/opcion2"
@@ -19,7 +20,7 @@
     <item android:id="@+id/opcion3"
         android:title="ajustes"
        android:icon="@drawable/ic_baseline_settings_24"
-        android:iconTint="@color/white"
+
         />
 
 

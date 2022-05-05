@@ -32,7 +32,7 @@ class Home : AppCompatActivity() {
             DatosEjercicios("https://todobulletjournal.com/wp-content/uploads/registro-de-ejercicio-6.jpg",3)
         )
 
-        Log.i(TAG_LOGS,datos.size.toString())
+
 
 
         adapter = EjerciciosHolder(this, datos)
@@ -53,14 +53,17 @@ class Home : AppCompatActivity() {
                 com.example.fitnessapp.R.id.opcion1 -> {
                     val intent= Intent(this,Perfil::class.java)
                     startActivity(intent)
+
                 }
                 com.example.fitnessapp.R.id.opcion2 -> {
                     val intent= Intent(this,Home::class.java)
                     startActivity(intent)
+                    item.isVisible=true
                 }
                 com.example.fitnessapp.R.id.opcion3 ->{
                     val intent= Intent(this,Ajustes::class.java)
                     startActivity(intent)
+                    item.isVisible=true
 
                 }
             }

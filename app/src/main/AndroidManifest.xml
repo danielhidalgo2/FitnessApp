@@ -12,6 +12,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         <activity
+            android:name=".ui.view.EstiloSaludable"
+            android:exported="false" />
+        <activity
+            android:name=".ui.view.AltasProteinas"
+            android:exported="false" />
+        <activity
+            android:name=".ui.view.GananciaMuscular"
+            android:exported="false" />
+        <activity
+            android:name=".ui.view.PerdidaPeso"
+            android:exported="false" />
+        <activity
             android:name=".ui.view.Nutricion"
             android:exported="false" />
         <activity

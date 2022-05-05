@@ -4,7 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.view.Ejercicios">
+    tools:context=".ui.view.PerdidaPeso">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerview2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        ></androidx.recyclerview.widget.RecyclerView>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/toolbar"
@@ -12,12 +18,13 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:background="#7F05D7"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:menu="@menu/menu_menu"
-        tools:ignore="MissingConstraints"
         app:itemIconTint="@color/white"
-        app:itemTextColor="@color/white">
+        app:itemTextColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/recyclerview2"
+        app:menu="@menu/menu_menu"
+        tools:layout_editor_absoluteX="0dp">
 
     </com.google.android.material.bottomnavigation.BottomNavigationView>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
