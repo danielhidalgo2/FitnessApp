@@ -9,6 +9,7 @@ import com.example.fitnessapp.R
 import com.example.fitnessapp.data.DatosEjercicios
 import com.example.fitnessapp.databinding.ActivityHomeBinding
 
+
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 lateinit var adapter: EjerciciosHolder
