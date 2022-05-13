@@ -20,6 +20,7 @@ import com.google.firebase.ktx.Firebase
 enum class ProviderType{
     BASIC
 }
+var email: String? = null
  class Registro : AppCompatActivity() {
 
     private val db = FirebaseFirestore.getInstance()
@@ -52,6 +53,7 @@ enum class ProviderType{
                 db.collection("Users").document(correoRegistro.text.toString()).set(
                     hashMapOf("nombre" to nombreRegistro.text.toString(), "apellido" to apellidosRegistro.text.toString(), "contrasenia" to contraseniaRegistro.text.toString(), "confirmacion" to contraseniaConfirmada.text.toString())
                 )
+                email=binding.correoRegistro.text.toString()
                 FirebaseAuth.getInstance().createUserWithEmailAndPassword(binding.correoRegistro.text.toString(),binding.contraseARegistro.text.toString()).addOnCompleteListener {
                     if(it.isSuccessful){
                        showHome(it.result?.user?.email ?:"",ProviderType.BASIC)

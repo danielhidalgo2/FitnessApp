@@ -41,6 +41,7 @@ class MainActivity : AppCompatActivity() {
                 FirebaseAuth.getInstance().signInWithEmailAndPassword(binding.usuario.text.toString(),binding.password.text.toString()).addOnCompleteListener {
                     if(it.isSuccessful){
                         showHome(it.result?.user?.email ?:"",ProviderType.BASIC)
+                        email=binding.usuario.text.toString()
 
                     }else{
                         Toast.makeText(this,"error", Toast.LENGTH_LONG).show()

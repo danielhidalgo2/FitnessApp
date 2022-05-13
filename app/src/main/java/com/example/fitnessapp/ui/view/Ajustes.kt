@@ -8,12 +8,13 @@ import com.example.fitnessapp.R
 import com.example.fitnessapp.databinding.ActivityAjustesBinding
 import com.example.fitnessapp.databinding.ActivityHomeBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.ktx.Firebase
 
 class Ajustes : AppCompatActivity() {
 
-    //private val db = FirebaseFirestore.getInstance()
+    private val db = FirebaseFirestore.getInstance()
     val registro = Registro()
 
     private lateinit var binding: ActivityAjustesBinding
@@ -37,11 +38,14 @@ class Ajustes : AppCompatActivity() {
             startActivity(intent)
         }
 
-        /*binding.eliminarcuenta.setOnClickListener{
-            db.collection("Users").document(registro.).delete()
-            /*val  intent = Intent(this,MainActivity::class.java)
-            startActivity(intent)*/
-        }*/
+        binding.eliminarcuenta.setOnClickListener{
+            db.collection("Users").document(email.toString()).delete()
+            //con esta funcion podemos elimimnar el usuario de autentificacion en firebase
+            FirebaseAuth.getInstance().currentUser?.delete()
+
+            val  intent = Intent(this,MainActivity::class.java)
+            startActivity(intent)
+        }
     }
 
 
