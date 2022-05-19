@@ -21,24 +21,26 @@ enum class ProviderType{
     BASIC
 }
 var email: String? = null
- class Registro : AppCompatActivity() {
+
+  lateinit var correoajustes:String
+ open class Registro : AppCompatActivity() {
 
     private val db = FirebaseFirestore.getInstance()
 
     private lateinit var binding: ActivityRegistroBinding
 
 
-    override fun onCreate(savedInstanceState: Bundle?) {
+     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityRegistroBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        var nombreRegistro: EditText= findViewById(R.id.nombreRegistro)
-        var apellidosRegistro: EditText= findViewById(R.id.apellidosRegistro)
-        var correoRegistro: EditText= findViewById(R.id.correoRegistro)
-        var contraseniaRegistro: EditText= findViewById(R.id.contraseñaRegistro)
-        var contraseniaConfirmada: EditText= findViewById(R.id.contraseñaconfirmadaRegistro)
-        val boton :Button=findViewById(R.id.registrar)
+         var nombreRegistro: EditText= findViewById(R.id.nombreRegistro)
+         var apellidosRegistro: EditText= findViewById(R.id.apellidosRegistro)
+         var correoRegistro: EditText= findViewById(R.id.correoRegistro)
+         var contraseniaRegistro: EditText= findViewById(R.id.contraseñaRegistro)
+         var contraseniaConfirmada: EditText= findViewById(R.id.contraseñaconfirmadaRegistro)
+         val boton :Button=findViewById(R.id.registrar)
 
 
 
@@ -67,12 +69,11 @@ var email: String? = null
             }
         }
 
-        /*fun getCorreo(): String {
-            return correoRegistro.text.toString()
-        }*/
+
 
 
     }
+
 
     private fun showHome(email:String,provider:ProviderType){
         val intent=Intent(this,Home::class.java).apply {
