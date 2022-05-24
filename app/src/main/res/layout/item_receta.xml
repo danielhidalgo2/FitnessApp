@@ -65,6 +65,7 @@
 
             </TextView>
     <ImageView
+        android:id="@+id/favorito"
         android:layout_width="25dp"
         android:layout_height="25dp"
         android:layout_marginLeft="180dp"

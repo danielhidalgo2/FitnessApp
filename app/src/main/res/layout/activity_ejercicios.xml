@@ -6,6 +6,12 @@
     android:layout_height="match_parent"
     tools:context=".ui.view.Ejercicios">
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerview6"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        ></androidx.recyclerview.widget.RecyclerView>
+
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/toolbar"
         android:layout_width="match_parent"

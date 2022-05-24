@@ -3,13 +3,14 @@ package com.example.fitnessapp.ui.view
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.fitnessapp.R
 import com.example.fitnessapp.data.Perdidapeso
 import com.example.fitnessapp.databinding.ActivityPerdidaPesoBinding
 
 import com.google.android.material.bottomnavigation.BottomNavigationView
-
+val favoritos= mutableListOf<Perdidapeso>()
 class PerdidaPeso : AppCompatActivity() {
     lateinit var adapter: PerdidaPesoHolder
     private lateinit var binding: ActivityPerdidaPesoBinding
@@ -90,9 +91,37 @@ class PerdidaPeso : AppCompatActivity() {
         lista.adapter = adapter
         lista.layoutManager = LinearLayoutManager(this)
 
+        if (0 in listaf) {
+            favoritos.add(datos[0])
+            Log.i(TAG_LOGS, favoritos.toString())
+        }
+
+        if (2 in listaf) {
+            favoritos.add(datos[2])
+            Log.i(TAG_LOGS, favoritos.toString())
+        }
+
+        if (3 in listaf) {
+            favoritos.add(datos[3])
+            Log.i(TAG_LOGS, favoritos.toString())
+        }
+
+        if (4 in listaf) {
+            favoritos.add(datos[4])
+            Log.i(TAG_LOGS, favoritos.toString())
+        }
+
+        if (5 in listaf) {
+            favoritos.add(datos[5])
+            Log.i(TAG_LOGS, favoritos.toString())
+        }
+
+
 
 
     }
+    
+
 
     //con esta funcion controlamos la interacion con el menu y las distintas pantallas con sus funciones
     private val menuseleccion =
@@ -119,5 +148,6 @@ class PerdidaPeso : AppCompatActivity() {
 
             true
         }
+
 
 }

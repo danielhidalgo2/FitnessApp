@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         <activity
+            android:name=".ui.view.Fullbody"
+            android:exported="false" />
+        <activity
             android:name=".ui.view.EstiloSaludable"
             android:exported="false" />
         <activity
