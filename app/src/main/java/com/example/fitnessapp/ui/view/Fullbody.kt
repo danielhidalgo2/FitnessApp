@@ -25,7 +25,7 @@ class Fullbody : AppCompatActivity() {
             object : CountDownTimer(9000, 1000) {
 
                 override fun onTick(millisUntilFinished: Long) {
-                    binding.cuentaatras.setText("Quedan " + millisUntilFinished / 1000+" seg")
+                    binding.cuentaatras.setText("" + millisUntilFinished / 1000+" seg")
                 }
 
                 override fun onFinish() {
@@ -43,7 +43,7 @@ class Fullbody : AppCompatActivity() {
                 object : CountDownTimer(9000, 1000) {
 
                     override fun onTick(millisUntilFinished: Long) {
-                        binding.cuentaatras.setText("Quedan " + millisUntilFinished / 1000+" seg")
+                        binding.cuentaatras.setText(""+ millisUntilFinished / 1000+" seg")
                         binding.siguiente.visibility = View.INVISIBLE
                     }
 
@@ -59,7 +59,7 @@ class Fullbody : AppCompatActivity() {
                 object : CountDownTimer(9000, 1000) {
 
                     override fun onTick(millisUntilFinished: Long) {
-                        binding.cuentaatras.setText("Quedan " + millisUntilFinished / 1000+" seg")
+                        binding.cuentaatras.setText(""+ millisUntilFinished / 1000+" seg")
                         binding.siguiente.visibility= View.INVISIBLE
                     }
 
@@ -75,7 +75,7 @@ class Fullbody : AppCompatActivity() {
                 object : CountDownTimer(9000, 1000) {
 
                     override fun onTick(millisUntilFinished: Long) {
-                        binding.cuentaatras.setText("Quedan " + millisUntilFinished / 1000+" seg")
+                        binding.cuentaatras.setText("" + millisUntilFinished / 1000+" seg")
                         binding.siguiente.visibility= View.INVISIBLE
                     }
 
@@ -91,7 +91,7 @@ class Fullbody : AppCompatActivity() {
                 object : CountDownTimer(9000, 1000) {
 
                     override fun onTick(millisUntilFinished: Long) {
-                        binding.cuentaatras.setText("Quedan " + millisUntilFinished / 1000+" seg")
+                        binding.cuentaatras.setText(""+ millisUntilFinished / 1000+" seg")
                         binding.siguiente.visibility= View.INVISIBLE
                     }
 
@@ -107,7 +107,7 @@ class Fullbody : AppCompatActivity() {
                 object : CountDownTimer(9000, 1000) {
 
                     override fun onTick(millisUntilFinished: Long) {
-                        binding.cuentaatras.setText("Quedan " + millisUntilFinished / 1000+" seg")
+                        binding.cuentaatras.setText("" + millisUntilFinished / 1000 +" seg")
                         binding.siguiente.visibility= View.INVISIBLE
                     }
 
@@ -123,7 +123,7 @@ class Fullbody : AppCompatActivity() {
                 object : CountDownTimer(9000, 1000) {
 
                     override fun onTick(millisUntilFinished: Long) {
-                        binding.cuentaatras.setText("Quedan " + millisUntilFinished / 1000+" seg")
+                        binding.cuentaatras.setText("" + millisUntilFinished / 1000+" seg")
                         binding.siguiente.visibility= View.INVISIBLE
                     }
 

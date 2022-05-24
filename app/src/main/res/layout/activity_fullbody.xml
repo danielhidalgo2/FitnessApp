@@ -6,90 +6,110 @@
     android:layout_height="match_parent"
     tools:context=".ui.view.Fullbody">
 
-    <LinearLayout
+
+    <TextView
+        android:id="@+id/textView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:text="FullBody"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="25dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
 
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="20dp"
-            android:text="FullBody"
-            android:textAlignment="center"
-            android:textColor="@color/black"
-            android:textSize="25dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0"
-            tools:layout_editor_absoluteX="-3dp">
-
-        </TextView>
-
-        <ImageView
-            android:id="@+id/imagenejercicio"
-            android:layout_width="match_parent"
-            android:layout_height="300dp"
-            android:layout_margin="25dp"
-            app:layout_constraintTop_toBottomOf="@+id/textView"
-            tools:layout_editor_absoluteX="33dp"></ImageView>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <Button
-                android:id="@+id/comenzar"
-                android:layout_width="175dp"
-                android:layout_height="wrap_content"
-                android:layout_margin="20dp"
-                android:text="Comenzar"></Button>
-
-            <TextView
-                android:id="@+id/cuentaatras"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="20dp"
-                android:textSize="40dp"></TextView>
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="40dp">
-            <Button
-                android:id="@+id/siguiente"
-                android:layout_width="175dp"
-                android:layout_height="wrap_content"
-                android:layout_margin="20dp"
-                android:text="Siguiente"
-                android:visibility="invisible">
+    </TextView>
 
 
-            </Button>
-            <Button
-                android:id="@+id/registrarejercicio"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="20dp"
-                android:text="Registrar"
-                android:visibility="invisible">
+    <ImageView
+        android:id="@+id/imagenejercicio"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_margin="25dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.68"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintVertical_bias="0.0"></ImageView>
 
-            </Button>
+    <Button
+        android:id="@+id/comenzar"
+        android:layout_width="142dp"
+        android:layout_height="92dp"
+        android:layout_margin="20dp"
+        android:text="Comenzar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.055"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.658"></Button>
+
+    <TextView
+        android:id="@+id/cuentaatras"
+        android:layout_width="179dp"
+        android:layout_height="124dp"
+        android:layout_margin="20dp"
+        android:textSize="40dp"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="@+id/registrarejercicio"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.931"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.877"></TextView>
+
+    <Button
+        android:id="@+id/siguiente"
+        android:layout_width="142dp"
+        android:layout_height="92dp"
+        android:text="Siguiente"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.125"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.832">
 
 
-        </LinearLayout>
+    </Button>
 
+    <TextView
+        android:layout_width="176dp"
+        android:layout_height="55dp"
+        android:text="Quedan"
+        android:textSize="40dp"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.846"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.612">
 
+    </TextView>
 
+    <Button
+        android:id="@+id/registrarejercicio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:text="Registrar"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.375"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
 
-
-    </LinearLayout>
+    </Button>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
