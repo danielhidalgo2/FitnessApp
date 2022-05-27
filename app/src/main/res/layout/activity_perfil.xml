@@ -8,145 +8,219 @@
     >
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:layout_width="match_parent"
         android:id="@+id/toolbar"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        app:menu="@menu/menu_menu"
         android:background="#7F05D7"
         app:itemIconTint="@color/white"
-        app:itemTextColor="@color/white">
+        app:itemTextColor="@color/white"
+        app:menu="@menu/menu_menu">
 
     </com.google.android.material.bottomnavigation.BottomNavigationView>
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="675dp"
-        android:orientation="vertical">
+        android:layout_height="822dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginBottom="69dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="675dp"
+            android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="horizontal">
+
                 <ImageView
+                    android:id="@+id/imagenperfil"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
-                    android:background="@color/black">
-                </ImageView>
+                    android:layout_margin="10dp"
+                    android:background="@drawable/ic_baseline_linked_camera_24"></ImageView>
 
                 <TextView
                     android:id="@+id/nombreperfil"
-                    android:layout_marginTop="20dp"
-                    android:textSize="25dp"
-                    android:text="Nombre usuario"
                     android:layout_width="match_parent"
-                    android:layout_height="30dp"></TextView>
+                    android:layout_height="50dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="25dp"
+                    android:layout_marginEnd="15dp"
+                    android:textColor="@color/black"
+                    android:textSize="25dp"></TextView>
             </LinearLayout>
 
-        <TextView
-            android:id="@+id/tituloapellidosperfil"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Apellidos"
-            android:textSize="20dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="10dp"></TextView>
-        <EditText
-            android:id="@+id/apellidosperfil"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="10dp">
-
-        </EditText>
-
-        <TextView
-            android:id="@+id/titulocorreoperfil"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Correo"
-            android:textSize="20dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="10dp"></TextView>
-        <EditText
-            android:id="@+id/correoperfil"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="10dp">
-
-        </EditText>
-        <TextView
-            android:id="@+id/tituloalturaperfil"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Altura"
-            android:textSize="20dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="10dp"></TextView>
-        <EditText
-            android:id="@+id/alturaperfil"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="m"
-            android:textAlignment="textEnd"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="10dp">
-
-        </EditText>
-        <TextView
-            android:id="@+id/titulopesoaperfil"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Peso"
-            android:textSize="20dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="10dp"></TextView>
-        <EditText
-            android:id="@+id/pesoperfil"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Kg"
-            android:textAlignment="textEnd"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="10dp">
-
-        </EditText>
-
-        <TextView
-            android:id="@+id/titulocalcularaperfil"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Calcular IMC(Indice Masa Corporal"
-            android:textSize="20dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="10dp"></TextView>
-        <TextView
-            android:id="@+id/imcperfil"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Kg"
-            android:textAlignment="textEnd"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="10dp">
-
-        </TextView>
+            <TextView
+                android:id="@+id/tituloapellidosperfil"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="10dp"
+                android:text="Apellidos"
+                android:textColor="@color/black"
+                android:textSize="20dp"></TextView>
 
 
-    </LinearLayout>
+
+            <EditText
+                android:id="@+id/apellidosperfil"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="10dp"
+                android:textColor="@color/black">
+
+            </EditText>
+
+            <TextView
+                android:id="@+id/titulocorreoperfil"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="10dp"
+                android:text="Correo"
+                android:textColor="@color/black"
+                android:textSize="20dp"></TextView>
+
+            <TextView
+                android:id="@+id/correoperfil"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="10dp"
+                android:textSize="25dp"
+                android:textColor="@color/black">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/tituloalturaperfil"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="10dp"
+                android:text="Altura"
+                android:textColor="@color/black"
+                android:textSize="20dp"></TextView>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+
+            <EditText
+                android:id="@+id/alturaperfil"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="10dp"
+                android:textAlignment="textEnd"
+                android:ems="10"
+                android:inputType="numberDecimal"
+                android:textColor="@color/black">
+
+            </EditText>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="m"></TextView>
+            </LinearLayout>
+
+
+
+            <TextView
+                android:id="@+id/titulopesoaperfil"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="10dp"
+                android:text="Peso"
+                android:textColor="@color/black"
+                android:textSize="20dp"></TextView>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+
+
+            <EditText
+                android:id="@+id/pesoperfil"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="10dp"
+                android:textAlignment="textEnd"
+                android:inputType="numberDecimal"
+                android:ems="10"
+                android:textColor="@color/black">
+
+            </EditText>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="Kg"></TextView>
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/titulocalcularaperfil"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/boton_redodndo"
+                android:text="Calcular IMC (Indice Masa Corporal)"
+                android:textColor="@color/white"
+                android:textSize="18dp"></Button>
+
+            <TextView
+                android:id="@+id/imcperfil"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="10dp"
+                android:text="IMC"
+                android:textAlignment="textEnd"
+                android:textColor="@color/black">
+
+            </TextView>
+
+            <Button
+                android:id="@+id/guardar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/boton_redodndo"
+                android:text="Guardar"
+                android:textColor="@color/white">
+
+            </Button>
+
+
+        </LinearLayout>
     </ScrollView>
 
 </RelativeLayout>

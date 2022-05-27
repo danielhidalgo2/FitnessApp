@@ -21,6 +21,7 @@ enum class ProviderType{
     BASIC
 }
 var email: String? = null
+var apellido: String? = null
 
   lateinit var correoajustes:String
  open class Registro : AppCompatActivity() {
@@ -56,6 +57,7 @@ var email: String? = null
                     hashMapOf("nombre" to nombreRegistro.text.toString(), "apellido" to apellidosRegistro.text.toString(), "contrasenia" to contraseniaRegistro.text.toString(), "confirmacion" to contraseniaConfirmada.text.toString())
                 )
                 email=binding.correoRegistro.text.toString()
+                apellido=binding.apellidosRegistro.toString()
                 FirebaseAuth.getInstance().createUserWithEmailAndPassword(binding.correoRegistro.text.toString(),binding.contraseARegistro.text.toString()).addOnCompleteListener {
                     if(it.isSuccessful){
                        showHome(it.result?.user?.email ?:"",ProviderType.BASIC)
