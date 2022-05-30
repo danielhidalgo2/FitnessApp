@@ -1,17 +1,25 @@
 package com.example.fitnessapp.ui.view
 
+import android.app.Activity
 import android.content.Intent
+import android.content.pm.PackageManager
+import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.util.Log
+import android.widget.ImageView
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
+import com.example.fitnessapp.R
 import com.example.fitnessapp.databinding.ActivityPerfilBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.firestore.FirebaseFirestore
+import java.net.URI
 import java.util.*
+import java.util.jar.Manifest
 
 
 class Perfil : AppCompatActivity() {
@@ -21,6 +29,8 @@ class Perfil : AppCompatActivity() {
     @RequiresApi(Build.VERSION_CODES.N)
     val numero=Random().ints()
 
+     private val  SELECT_ACTIVITY = 50
+    private  var imageUri: Uri? = null
 
 
 
@@ -34,9 +44,12 @@ class Perfil : AppCompatActivity() {
         bottomNav.setOnNavigationItemSelectedListener(menuseleccion)
         idejercicio = numero.toString()
 
+
+
         db.collection("Users").document(email.toString()).get().addOnSuccessListener {
             binding.nombreperfil.setText("Hola de nuevo "+it.get("nombre") as String+" !" )
         }
+
 
 
 
@@ -94,6 +107,14 @@ class Perfil : AppCompatActivity() {
         }
 
 
+        binding.imagenperfil.setOnClickListener{
+            val intent = Intent(Intent.ACTION_GET_CONTENT)
+            intent.type = "image/*"
+            startActivityForResult(intent,SELECT_ACTIVITY)
+        }
+
+
+
         binding.titulocalcularaperfil.setOnClickListener {
 
             val numCadena = binding.pesoperfil.text.toString()
@@ -120,7 +141,9 @@ class Perfil : AppCompatActivity() {
 
     }
 
-//con esta funcion controlamos la interacion con el menu y las distintas pantallas con sus funciones
+
+
+    //con esta funcion controlamos la interacion con el menu y las distintas pantallas con sus funciones
     private val menuseleccion =
         BottomNavigationView.OnNavigationItemSelectedListener { item ->
 
@@ -142,5 +165,17 @@ class Perfil : AppCompatActivity() {
 
             true
         }
+
+
+    override fun onActivityResult(requestCode : Int, resultCode: Int, data: Intent?){
+        super.onActivityResult(requestCode, resultCode, data)
+
+        when{
+            requestCode == SELECT_ACTIVITY && resultCode == Activity.RESULT_OK -> {
+                imageUri = data!!.data
+                binding.imagenperfil.setImageURI(imageUri)
+            }
+        }
+    }
 
 }
