@@ -14,8 +14,7 @@
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Titulo">
+        app:layout_constraintStart_toStartOf="parent">
 
 
         <TextView
@@ -27,15 +26,30 @@
             android:layout_marginStart="10dp"
             android:layout_marginEnd="10dp"
             android:text="Correo"></TextView>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+            <ImageView
+                android:layout_width="50dp"
+                android:background="@drawable/candado"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="10dp">
+
+            </ImageView>
 
         <EditText
             android:id="@+id/usuario"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
             android:minHeight="48dp"
+            android:layout_marginTop="10dp"
             android:layout_marginStart="10dp"
+            android:textColor="@color/white"
             android:layout_marginEnd="10dp"></EditText>
+        </LinearLayout>
         <TextView
             android:id="@+id/passwordtitulo"
             android:layout_width="match_parent"
@@ -46,14 +60,30 @@
             android:layout_marginEnd="10dp"
             android:layout_height="wrap_content"></TextView>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <ImageView
+                android:background="@drawable/fotouser"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="10dp">
+
+            </ImageView>
+
+
         <EditText
             android:id="@+id/password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
             android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/white"
             android:layout_marginEnd="10dp"
             android:inputType="textPassword" ></EditText>
+        </LinearLayout>
 
         <Button
             android:id="@+id/iniciar"

@@ -6,37 +6,55 @@
     android:layout_height="match_parent"
     tools:context=".ui.view.Ajustes">
 
-    <LinearLayout
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="495dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="216dp"
+        app:cardCornerRadius="8dp">
 
-        <TextView
-            android:id="@+id/ajustes"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="16dp"
-            android:text="Ajustes"
-            android:textColor="@color/black"
-            android:textSize="30dp"></TextView>
+            android:layout_height="590dp"
+            android:orientation="vertical">
 
-        <Button
-            android:id="@+id/cerrarsesison"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="200dp"
-            android:background="@drawable/boton_redodndo"
-            android:text="CERRAR SESISON"></Button>
+            <TextView
+                android:id="@+id/ajustes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:text="Ajustes"
+                android:textColor="@color/black"
+                android:textSize="30dp"></TextView>
 
-        <Button
-            android:id="@+id/eliminarcuenta"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="20dp"
-            android:background="@drawable/boton_redodndo"
-            android:text="ELIMINAR CUENTA"></Button>
+            <Button
+                android:id="@+id/cerrarsesison"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:textColor="@color/white"
+                android:layout_marginTop="100dp"
+                android:background="@drawable/boton_redodndo"
+                android:text="CERRAR SESISON"></Button>
 
-    </LinearLayout>
+            <Button
+                android:id="@+id/eliminarcuenta"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:textColor="@color/white"
+                android:background="@drawable/boton_redodndo"
+                android:text="ELIMINAR CUENTA"></Button>
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
 
 
     <com.google.android.material.bottomnavigation.BottomNavigationView

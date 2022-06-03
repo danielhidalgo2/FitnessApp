@@ -33,15 +33,7 @@ class CircuitosHolder(val context: Context, val ejercicioslist: MutableList<Obje
                     context2.startActivity(Intent(context2, Fullbody::class.java))
                 }
                 else if (position==1) {
-
-                    alerta.setMessage("Proximamente.....")
-                        .setTitle("Información")
-                        .setCancelable(false)//esto es para que clique fuera del popup de alerta
-                        .setNegativeButton(
-                            "Cerrar",
-                            DialogInterface.OnClickListener { dialog, which -> dialog.cancel() })
-                        .create()
-                        .show()
+                    context2.startActivity(Intent(context2, StepCounter::class.java))
                 } else if (position==2) {
 
                     alerta.setMessage("Proximamente.....")
