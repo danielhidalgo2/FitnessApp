@@ -3,6 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/6001962/AndroidStudioProjects/FitnessApp2/app/src/main/res/layout/activity_main2.xml" value="0.1" />
+        <entry key="..\:/Users/6001962/AndroidStudioProjects/FitnessApp2/app/src/main/res/layout/activity_perfil.xml" value="0.1" />
         <entry key="..\:/Users/6001962/AndroidStudioProjects/FitnessApp2/app/src/main/res/layout/activity_registro.xml" value="0.22" />
         <entry key="..\:/Users/6001965/AndroidStudioProjects/FitnessApp/app/src/main/res/drawable/boton_redodndo.xml" value="0.104" />
         <entry key="..\:/Users/6001965/AndroidStudioProjects/FitnessApp/app/src/main/res/drawable/logo.xml" value="0.19583333333333333" />
@@ -11,6 +13,9 @@
         <entry key="..\:/Users/6001965/AndroidStudioProjects/FitnessApp/app/src/main/res/layout/activity_ajustes.xml" value="0.17074275362318841" />
         <entry key="..\:/Users/6001965/AndroidStudioProjects/FitnessApp/app/src/main/res/layout/activity_altas_proteinas.xml" value="0.14990942028985507" />
         <entry key="..\:/Users/6001965/AndroidStudioProjects/FitnessApp/app/src/main/res/layout/activity_ejercicios.xml" value="0.14990942028985507" />
+        <entry key="..\:/Users/6001965/AndroidStudioProjects/FitnessApp/app/src/main/res/layout/activity_estilo_saludable.xml" value="0.1" />
+        <entry key="..\:/Users/6001965/AndroidStudioProjects/FitnessApp/app/src/main/res/layout/activity_fullbody.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/6001965/AndroidStudioProjects/FitnessApp/app/src/main/res/layout/activity_ganancia_muscular.xml" value="0.1" />
         <entry key="..\:/Users/6001965/AndroidStudioProjects/FitnessApp/app/src/main/res/layout/activity_home.xml" value="0.17074275362318841" />
         <entry key="..\:/Users/6001965/AndroidStudioProjects/FitnessApp/app/src/main/res/layout/activity_login.xml" value="0.1743659420289855" />
         <entry key="..\:/Users/6001965/AndroidStudioProjects/FitnessApp/app/src/main/res/layout/activity_main.xml" value="0.22" />
@@ -19,22 +24,29 @@
         <entry key="..\:/Users/6001965/AndroidStudioProjects/FitnessApp/app/src/main/res/layout/activity_perdida_peso.xml" value="0.14990942028985507" />
         <entry key="..\:/Users/6001965/AndroidStudioProjects/FitnessApp/app/src/main/res/layout/activity_perfil.xml" value="0.22" />
         <entry key="..\:/Users/6001965/AndroidStudioProjects/FitnessApp/app/src/main/res/layout/activity_registro.xml" value="0.22" />
+        <entry key="..\:/Users/6001965/AndroidStudioProjects/FitnessApp/app/src/main/res/layout/activity_track.xml" value="0.1" />
+        <entry key="..\:/Users/6001965/AndroidStudioProjects/FitnessApp/app/src/main/res/layout/item_circuito.xml" value="0.14990942028985507" />
         <entry key="..\:/Users/6001965/AndroidStudioProjects/FitnessApp/app/src/main/res/layout/item_ejercicicos.xml" value="0.1" />
         <entry key="..\:/Users/6001965/AndroidStudioProjects/FitnessApp/app/src/main/res/layout/item_objetivos_receta.xml" value="0.14990942028985507" />
-        <entry key="..\:/Users/6001965/AndroidStudioProjects/FitnessApp/app/src/main/res/layout/item_receta.xml" value="0.3054662379421222" />
+        <entry key="..\:/Users/6001965/AndroidStudioProjects/FitnessApp/app/src/main/res/layout/item_receta.xml" value="0.1" />
+        <entry key="..\:/Users/6001965/AndroidStudioProjects/FitnessApp/app/src/main/res/layout/item_track_ejercicio.xml" value="0.13381787088499358" />
+        <entry key="..\:/Users/6001965/AndroidStudioProjects/FitnessApp/app/src/main/res/layout/item_trackejercicios.xml" value="0.14666666666666667" />
         <entry key="..\:/Users/6001965/AndroidStudioProjects/FitnessApp/app/src/main/res/menu/menu_menu.xml" value="0.22" />
         <entry key="..\:/Users/6001965/AndroidStudioProjects/FitnessApp/app/src/main/res/menu/toolbar.xml" value="0.1796875" />
-        <entry key="app/src/main/res/layout/activity_ajustes.xml" value="0.2536231884057971" />
-        <entry key="app/src/main/res/layout/activity_home.xml" value="0.2536231884057971" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
-        <entry key="app/src/main/res/layout/activity_step_counter.xml" value="0.18115942028985507" />
-        <entry key="app/src/main/res/layout/activity_step_counter2.xml" value="0.25" />
-        <entry key="app/src/main/res/layout/item_ejercicicos.xml" value="0.2536231884057971" />
-        <entry key="app/src/main/res/layout/item_receta.xml" value="0.2536231884057971" />
+        <entry key="..\:/Users/Daniel/AndroidStudioProjects/FitnessApp/app/src/main/res/drawable/boton_redodndo.xml" value="0.39791666666666664" />
+        <entry key="..\:/Users/Daniel/AndroidStudioProjects/FitnessApp/app/src/main/res/drawable/candado.xml" value="0.39791666666666664" />
+        <entry key="..\:/Users/Daniel/AndroidStudioProjects/FitnessApp/app/src/main/res/drawable/fotouser.xml" value="0.39791666666666664" />
+        <entry key="..\:/Users/Daniel/AndroidStudioProjects/FitnessApp/app/src/main/res/drawable/ic_baseline_home_24.xml" value="0.39791666666666664" />
+        <entry key="..\:/Users/Daniel/AndroidStudioProjects/FitnessApp/app/src/main/res/drawable/ic_baseline_linked_camera_24.xml" value="0.39791666666666664" />
+        <entry key="..\:/Users/Daniel/AndroidStudioProjects/FitnessApp/app/src/main/res/drawable/ic_baseline_person_24.xml" value="0.39791666666666664" />
+        <entry key="..\:/Users/Daniel/AndroidStudioProjects/FitnessApp/app/src/main/res/drawable/ic_launcherye_foreground.xml" value="0.39791666666666664" />
+        <entry key="..\:/Users/Daniel/AndroidStudioProjects/FitnessApp/app/src/main/res/layout/activity_main.xml" value="0.26992753623188404" />
+        <entry key="..\:/Users/Daniel/AndroidStudioProjects/FitnessApp/app/src/main/res/layout/activity_splash_screen.xml" value="0.2572463768115942" />
+        <entry key="..\:/Users/Daniel/AndroidStudioProjects/FitnessApp/app/src/main/res/layout/splashscreen.xml" value="0.2572463768115942" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
