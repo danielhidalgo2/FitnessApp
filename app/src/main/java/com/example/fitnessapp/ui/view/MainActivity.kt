@@ -21,8 +21,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-
+        supportActionBar?.hide()
+        setTheme(R.style.Theme_FitnessApp)
         val gg:TextView= findViewById(R.id.pregunta)
 
         val mitextoU = SpannableString("¿No tienes cuenta en FitnessLife aùn? Crear cuenta")
