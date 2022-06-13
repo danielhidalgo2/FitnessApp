@@ -1,6 +1,7 @@
 package com.example.fitnessapp.ui.view
 
 
+import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import android.os.CountDownTimer
@@ -17,7 +18,7 @@ import java.util.*
 
 
 lateinit var  idejercicio:String
-val numero=Random().ints()
+
 var formatter = SimpleDateFormat("HH:mm:ss")
 var curDate = Date(System.currentTimeMillis())
 // Obtener la hora actual
@@ -174,17 +175,17 @@ class Fullbody : AppCompatActivity() {
             val numero=Random().ints()
 
             idejercicio=numero.toString()
+            val calorias ="400"
 
 
             db.collection("Users").document(email.toString()).collection("EjerciciosRegistro").document(
                 idejercicio).set(
-                hashMapOf("Titulo" to binding.tituloejercicio.text.toString(),"Fecha" to date+" a las "+ str)
+                hashMapOf("Titulo" to binding.tituloejercicio.text.toString(),"Fecha" to date+" a las "+ str, "Pasos" to calorias+" Kcl")
 
             )
 
-            db.collection("Registro").document(email.toString()).get().addOnSuccessListener {
-                hashMapOf("Titulo" to binding.tituloejercicio.text.toString(),"Fecha" to date+" a las "+ str)
-            }
+            val intent =Intent(this,Ejercicios::class.java)
+            startActivity(intent)
 
 
         }

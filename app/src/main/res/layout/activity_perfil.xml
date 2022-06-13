@@ -69,8 +69,20 @@
                 android:text="Apellidos"
                 android:textColor="@color/black"
                 android:textSize="20dp"></TextView>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
 
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/ic_baseline_person_outline_24"
+                android:layout_marginStart="10dp">
+
+            </ImageView>
 
             <EditText
                 android:id="@+id/apellidosperfil"
@@ -83,6 +95,8 @@
 
             </EditText>
 
+            </LinearLayout>
+
             <TextView
                 android:id="@+id/titulocorreoperfil"
                 android:layout_width="match_parent"
@@ -93,6 +107,19 @@
                 android:text="Correo"
                 android:textColor="@color/black"
                 android:textSize="20dp"></TextView>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/ic_baseline_contact_mail_24"
+                android:layout_marginStart="10dp">
+
+            </ImageView>
 
             <TextView
                 android:id="@+id/correoperfil"
@@ -105,6 +132,8 @@
                 android:textColor="@color/black">
 
             </TextView>
+
+        </LinearLayout>
 
             <TextView
                 android:id="@+id/tituloalturaperfil"
@@ -193,6 +222,20 @@
                 android:textColor="@color/white"
                 android:textSize="18dp"></Button>
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/info"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/ic_baseline_info_24"
+                    android:layout_marginStart="10dp">
+
+                </ImageView>
+
             <TextView
                 android:id="@+id/imcperfil"
                 android:layout_width="match_parent"
@@ -201,10 +244,13 @@
                 android:layout_marginTop="20dp"
                 android:layout_marginEnd="10dp"
                 android:text="IMC"
+                android:textSize="20dp"
                 android:textAlignment="textEnd"
                 android:textColor="@color/black">
 
             </TextView>
+
+            </LinearLayout>
 
             <Button
                 android:id="@+id/guardar"

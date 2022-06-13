@@ -24,13 +24,22 @@
         <entry key="..\:/Users/6001965/AndroidStudioProjects/FitnessApp/app/src/main/res/layout/item_receta.xml" value="0.3054662379421222" />
         <entry key="..\:/Users/6001965/AndroidStudioProjects/FitnessApp/app/src/main/res/menu/menu_menu.xml" value="0.22" />
         <entry key="..\:/Users/6001965/AndroidStudioProjects/FitnessApp/app/src/main/res/menu/toolbar.xml" value="0.1796875" />
+        <entry key="app/src/main/res/drawable/flame.xml" value="0.125" />
+        <entry key="app/src/main/res/drawable/ic_baseline_linked_camera_24.xml" value="0.125" />
+        <entry key="app/src/main/res/drawable/ic_baseline_settings_24.xml" value="0.125" />
         <entry key="app/src/main/res/layout/activity_ajustes.xml" value="0.2536231884057971" />
         <entry key="app/src/main/res/layout/activity_home.xml" value="0.2536231884057971" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_perfil.xml" value="0.22056159420289856" />
         <entry key="app/src/main/res/layout/activity_step_counter.xml" value="0.18115942028985507" />
         <entry key="app/src/main/res/layout/activity_step_counter2.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_track.xml" value="0.22418478260869565" />
         <entry key="app/src/main/res/layout/item_ejercicicos.xml" value="0.2536231884057971" />
         <entry key="app/src/main/res/layout/item_receta.xml" value="0.2536231884057971" />
+        <entry key="app/src/main/res/layout/item_track_ejercicio.xml" value="0.335" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.125" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.125" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcherye.xml" value="0.125" />
       </map>
     </option>
   </component>

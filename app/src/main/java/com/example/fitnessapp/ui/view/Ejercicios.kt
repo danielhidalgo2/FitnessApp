@@ -26,7 +26,7 @@ class Ejercicios : AppCompatActivity() {
 
 
         val ejercicios= mutableListOf<Objetivosutricion>(Objetivosutricion("https://i.blogs.es/6c76f5/istock-1172740018/1366_2000.jpeg","Circuito FullBody en casa"),
-        Objetivosutricion("https://content21.sabervivirtv.com/medio/2022/02/14/ejercicio-cardio-perder-peso_fb3b20b9_1024x576.jpg","Circuito de Cardio"),
+        Objetivosutricion("https://content21.sabervivirtv.com/medio/2022/02/14/ejercicio-cardio-perder-peso_fb3b20b9_1024x576.jpg","Andar Libre"),
             Objetivosutricion(
                 "https://static.abc.es/media/MM/2021/11/17/crunch-lateral-kLzC--1248x900@abc.jpg","Circuito de Torso"),
             Objetivosutricion("https://pybonacci.es/wp-content/uploads/2021/07/ejercicios-piernas-en-casa.jpg","Circuito de Piernas")

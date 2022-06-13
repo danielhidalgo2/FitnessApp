@@ -1,6 +1,8 @@
 package com.example.fitnessapp.ui.view
 
 import android.app.Activity
+import android.app.AlertDialog
+import android.content.DialogInterface
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.net.Uri
@@ -11,13 +13,16 @@ import android.widget.ImageView
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import androidx.core.net.toUri
 import com.example.fitnessapp.R
 import com.example.fitnessapp.databinding.ActivityPerfilBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.firestore.FirebaseFirestore
 import java.net.URI
+import java.net.URL
 import java.util.*
 import java.util.jar.Manifest
 
@@ -31,6 +36,9 @@ class Perfil : AppCompatActivity() {
 
      private val  SELECT_ACTIVITY = 50
     private  var imageUri: Uri? = null
+
+    var uri:String="https://www.who.int/es/news-room/fact-sheets/detail/obesity-and-overweight"
+    lateinit var link:Uri
 
 
 
@@ -49,6 +57,8 @@ class Perfil : AppCompatActivity() {
         db.collection("Users").document(email.toString()).get().addOnSuccessListener {
             binding.nombreperfil.setText("Hola de nuevo "+it.get("nombre") as String+" !" )
         }
+
+
 
 
 
@@ -131,6 +141,28 @@ class Perfil : AppCompatActivity() {
                 binding.imcperfil.setText(resultado.toString())
 
 
+        }
+
+
+        binding.info.setOnClickListener {
+
+            val alerta = AlertDialog.Builder(this)
+            alerta.setMessage("El IMC (índice de masa corporal) se emplea para determinar si una persona padece sobrepeso, pero no tiene en cuenta el porcentaje de grasa corporal, por lo que no es fiable para diagnosticar la obesidad." +
+                    "¿Quieres informarte mas?")
+                .setTitle("Alerta")
+                .setCancelable(false)//esto es para que clique fuera del popup de alerta
+                .setPositiveButton(
+                    "Cerrar",
+                    DialogInterface.OnClickListener { dialog, which -> dialog.cancel() })
+                .setNegativeButton(
+                    "Aceptar",
+                    DialogInterface.OnClickListener { dia, which -> link=uri.toUri()
+                        val intent=Intent(Intent.ACTION_VIEW,link)
+                        startActivity(intent)
+
+                    })
+                .create()
+                .show()
         }
 
 

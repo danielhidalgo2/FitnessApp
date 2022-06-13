@@ -33,7 +33,7 @@
             >
             <ImageView
                 android:layout_width="50dp"
-                android:background="@drawable/candado"
+                android:background="@drawable/fotouser"
                 android:layout_height="50dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginStart="10dp">
@@ -65,7 +65,7 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
             <ImageView
-                android:background="@drawable/fotouser"
+                android:background="@drawable/candado"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_marginTop="10dp"

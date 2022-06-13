@@ -39,11 +39,13 @@ class Track : AppCompatActivity() {
 
 
 
-        db.collection("Users").document(email.toString()).collection("EjerciciosRegistro").whereEqualTo("Titulo","FullBody").get().addOnSuccessListener {
+        db.collection("Users").document(email.toString()).collection("EjerciciosRegistro").get().addOnSuccessListener {
                 documents ->
             for (document in documents) {
-                Log.i(TAG_LOGS, "${document.id} => ${document.data}")
-                datos.addAll(listOf(EjercicioRegistradoTrack(document.get("Fecha")as String,document.get("Titulo")as String)))
+                Log.i(TAG_LOGS,document.get("Fecha")as String)
+                Log.i(TAG_LOGS,document.get("Titulo")as String)
+                Log.i(TAG_LOGS,document.get("Pasos")as String)
+                datos.addAll(listOf(EjercicioRegistradoTrack(document.get("Fecha")as String,document.get("Titulo")as String, document.get("Pasos")as String)))
 
 
                 adapter= TrackHolder(this,datos)

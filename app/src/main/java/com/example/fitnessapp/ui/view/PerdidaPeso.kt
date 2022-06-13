@@ -1,5 +1,6 @@
 package com.example.fitnessapp.ui.view
 
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -91,29 +92,83 @@ class PerdidaPeso : AppCompatActivity() {
         lista.adapter = adapter
         lista.layoutManager = LinearLayoutManager(this)
 
+
         if (0 in listaf) {
             favoritos.add(datos[0])
-            Log.i(TAG_LOGS, favoritos.toString())
+            val sharedPreferences = getSharedPreferences("datosrecetas", Context.MODE_PRIVATE)
+
+            val editor = sharedPreferences.edit()
+            editor.putString("titulo", datos[0].titulo)
+            editor.putString("foto", datos[0].foto)
+            editor.putString("informacion", datos[0].informacion)
+            editor.putString("calorias", datos[0].calorias)
+            editor.putString("tiempo", datos[0].tiempo)
+            editor.putInt("id",0)
+            editor.apply()
+        }
+
+        if(1 in listaf){
+            val sharedPreferences = getSharedPreferences("datosrecetas1", Context.MODE_PRIVATE)
+            val editor = sharedPreferences.edit()
+            editor.putString("titulo", datos[1].titulo)
+            editor.putString("foto", datos[1].foto)
+            editor.putString("informacion", datos[1].informacion)
+            editor.putString("calorias", datos[1].calorias)
+            editor.putString("tiempo", datos[1].tiempo)
+            editor.putInt("id",1)
+            editor.apply()
         }
 
         if (2 in listaf) {
             favoritos.add(datos[2])
-            Log.i(TAG_LOGS, favoritos.toString())
+            val sharedPreferences = getSharedPreferences("datosrecetas", Context.MODE_PRIVATE)
+            val editor = sharedPreferences.edit()
+            editor.putString("titulo", datos[2].titulo)
+            editor.putString("foto", datos[2].foto)
+            editor.putString("informacion", datos[2].informacion)
+            editor.putString("calorias", datos[2].calorias)
+            editor.putString("tiempo", datos[2].tiempo)
+            editor.putInt("id",2)
+            editor.apply()
         }
 
         if (3 in listaf) {
             favoritos.add(datos[3])
-            Log.i(TAG_LOGS, favoritos.toString())
+            val sharedPreferences = getSharedPreferences("datosrecetas", Context.MODE_PRIVATE)
+            val editor = sharedPreferences.edit()
+            editor.putString("titulo", datos[3].titulo)
+            editor.putString("foto", datos[3].foto)
+            editor.putString("informacion", datos[3].informacion)
+            editor.putString("calorias", datos[3].calorias)
+            editor.putString("tiempo", datos[3].tiempo)
+            editor.putInt("id",3)
+            editor.apply()
         }
 
         if (4 in listaf) {
             favoritos.add(datos[4])
-            Log.i(TAG_LOGS, favoritos.toString())
+            val sharedPreferences = getSharedPreferences("datosrecetas", Context.MODE_PRIVATE)
+            val editor = sharedPreferences.edit()
+            editor.putString("titulo", datos[4].titulo)
+            editor.putString("foto", datos[4].foto)
+            editor.putString("informacion", datos[4].informacion)
+            editor.putString("calorias", datos[4].calorias)
+            editor.putString("tiempo", datos[4].tiempo)
+            editor.putInt("id",4)
+            editor.apply()
         }
 
         if (5 in listaf) {
             favoritos.add(datos[5])
-            Log.i(TAG_LOGS, favoritos.toString())
+            val sharedPreferences = getSharedPreferences("datosrecetas", Context.MODE_PRIVATE)
+            val editor = sharedPreferences.edit()
+            editor.putString("titulo", datos[5].titulo)
+            editor.putString("foto", datos[5].foto)
+            editor.putString("informacion", datos[5].informacion)
+            editor.putString("calorias", datos[5].calorias)
+            editor.putString("tiempo", datos[5].tiempo)
+            editor.putInt("id",5)
+            editor.apply()
         }
 
 

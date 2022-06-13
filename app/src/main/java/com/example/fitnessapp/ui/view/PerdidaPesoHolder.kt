@@ -1,6 +1,7 @@
 package com.example.fitnessapp.ui.view
 
 import android.content.Context
+import android.content.SharedPreferences
 import android.graphics.Color
 import android.graphics.drawable.Drawable
 import android.graphics.drawable.Icon
@@ -18,6 +19,7 @@ import com.example.fitnessapp.databinding.ItemRecetaBinding
 
 val listaf= mutableListOf<Int>()
 var color=false
+
 
 
 
@@ -42,6 +44,7 @@ class PerdidaPesoHolder(val context: Context,val listaperdidpeso: MutableList<Pe
                     binding.favorito.setImageResource(R.drawable.ic_baseline_star_24ye)
                     listaf.add(position)
                     Log.i(TAG_LOGS, listaf.toString())
+
                 }
 
 
@@ -70,4 +73,9 @@ class PerdidaPesoHolder(val context: Context,val listaperdidpeso: MutableList<Pe
 
     }
 
+
 }
+
+
+
+

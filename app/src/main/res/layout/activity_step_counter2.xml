@@ -24,41 +24,57 @@
 
     </TextView>
 
+
     <com.mikhaellopez.circularprogressbar.CircularProgressBar
         android:id="@+id/circularProgressBar"
-        android:layout_width="240dp"
-        android:layout_height="279dp"
+        android:layout_width="276dp"
+        android:layout_height="282dp"
         app:cpb_background_progressbar_color="#b6bbd8"
         app:cpb_background_progressbar_width="10dp"
         app:cpb_progress_direction="to_right"
+        app:cpb_progress_max="10000"
         app:cpb_progressbar_color="#673AB7"
         app:cpb_progressbar_width="20dp"
         app:cpb_round_border="true"
-        app:cpb_progress_max="10000"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.549"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.499">
+        app:layout_constraintVertical_bias="0.498">
 
     </com.mikhaellopez.circularprogressbar.CircularProgressBar>
 
+    <Button
+        android:id="@+id/registrarpasos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:background="@drawable/boton_redodndo"
+        android:text="Registrar"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.989">
 
+    </Button>
 
     <TextView
         android:id="@+id/contador"
         android:layout_width="100dp"
         android:layout_height="40dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         android:text="0"
         android:textAlignment="center"
         android:textSize="30dp"
-        app:layout_constraintHorizontal_bias="0.533"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.464">
+        app:layout_constraintVertical_bias="0.474">
 
     </TextView>
 
@@ -72,10 +88,10 @@
         android:textSize="25dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.533"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.547">
+        app:layout_constraintVertical_bias="0.575">
 
     </TextView>
 
