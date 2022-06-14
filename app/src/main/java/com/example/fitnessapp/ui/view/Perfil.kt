@@ -5,6 +5,7 @@ import android.app.AlertDialog
 import android.content.DialogInterface
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.graphics.Color
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
@@ -21,24 +22,37 @@ import com.example.fitnessapp.databinding.ActivityPerfilBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.storage.FileDownloadTask
+import com.google.firebase.storage.FirebaseStorage
+import com.google.firebase.storage.StorageReference
 import java.net.URI
 import java.net.URL
 import java.util.*
 import java.util.jar.Manifest
+import com.google.android.gms.tasks.OnSuccessListener
+import com.google.android.gms.tasks.Task
+
+import com.google.firebase.storage.UploadTask
+
+
+
 
 
 class Perfil : AppCompatActivity() {
     private lateinit var binding: ActivityPerfilBinding
     private val db = FirebaseFirestore.getInstance()
     private lateinit var database: DatabaseReference
+
     @RequiresApi(Build.VERSION_CODES.N)
-    val numero=Random().ints()
+    val numero = Random().ints()
 
-     private val  SELECT_ACTIVITY = 50
-    private  var imageUri: Uri? = null
+    private val SELECT_ACTIVITY = 50
+    private var imageUri: Uri? = null
 
-    var uri:String="https://www.who.int/es/news-room/fact-sheets/detail/obesity-and-overweight"
-    lateinit var link:Uri
+    var uri: String = "https://www.who.int/es/news-room/fact-sheets/detail/obesity-and-overweight"
+    lateinit var link: Uri
+    val estado = false
+
 
 
 
@@ -54,13 +68,11 @@ class Perfil : AppCompatActivity() {
 
 
 
+
+
         db.collection("Users").document(email.toString()).get().addOnSuccessListener {
-            binding.nombreperfil.setText("Hola de nuevo "+it.get("nombre") as String+" !" )
+            binding.nombreperfil.setText("Hola de nuevo " + it.get("nombre") as String + " !")
         }
-
-
-
-
 
 
 
@@ -68,16 +80,19 @@ class Perfil : AppCompatActivity() {
 
         if (true) {
 
-            db.collection("Users").document(email.toString()).collection("DatosPersonales").whereEqualTo("correo",
-                email).get().addOnSuccessListener { documents ->
+            db.collection("Users").document(email.toString()).collection("DatosPersonales")
+                .whereEqualTo(
+                    "correo",
+                    email
+                ).get().addOnSuccessListener { documents ->
                 for (document in documents) {
                     Log.i(TAG_LOGS, "${document.id} => ${document.data}")
 
-                    binding.imcperfil.setText(document.get("imc") as String )
-                    binding.pesoperfil.setText(document.get("peso")as String)
-                    binding.alturaperfil.setText(document.get("altura")as String)
+                    binding.imcperfil.setText(document.get("imc") as String)
+                    binding.pesoperfil.setText(document.get("peso") as String)
+                    binding.alturaperfil.setText(document.get("altura") as String)
                     binding.correoperfil.setText(email)
-                    binding.apellidosperfil.setText(document.get("apellidos")as String)
+                    binding.apellidosperfil.setText(document.get("apellidos") as String)
 
 
                 }
@@ -96,31 +111,51 @@ class Perfil : AppCompatActivity() {
 
                 db.collection("Users").document(email.toString()).collection("DatosPersonales")
                     .document(
-                      email.toString()
+                        email.toString()
                     ).set(
-                    hashMapOf(
-                        "correo" to email.toString(),
-                        "apellidos" to binding.apellidosperfil.text.toString(),
-                        "altura" to binding.alturaperfil.text.toString(),
-                        "peso" to binding.pesoperfil.text.toString(),
-                        "imc" to binding.imcperfil.text.toString()
-                    )
-                ).addOnSuccessListener {
-                    Toast.makeText(
-                        this,
-                        "Los datos se han guardado correctamente",
-                        Toast.LENGTH_LONG
-                    ).show()
+                        hashMapOf(
+                            "correo" to email.toString(),
+                            "apellidos" to binding.apellidosperfil.text.toString(),
+                            "altura" to binding.alturaperfil.text.toString(),
+                            "peso" to binding.pesoperfil.text.toString(),
+                            "imc" to binding.imcperfil.text.toString()
+                        )
+                    ).addOnSuccessListener {
+                        Toast.makeText(
+                            this,
+                            "Los datos se han guardado correctamente",
+                            Toast.LENGTH_LONG
+                        ).show()
+                    }
+
+                val folder: StorageReference = FirebaseStorage.getInstance().getReference()
+                val referencia:StorageReference=folder.child("User").child(imageUri!!.lastPathSegment.toString())
+                Log.i(TAG_LOGS,referencia.toString())
+
+
+
+                referencia.putFile(imageUri!!).addOnSuccessListener {
+                    Toast.makeText(this, "se ha guardado", Toast.LENGTH_LONG).show()
+                    Log.i(TAG_LOGS,it.toString())
+
+                }.addOnCanceledListener {
+                    Toast.makeText(this, "no ha guardado", Toast.LENGTH_LONG).show()
                 }
 
             }
+
+
         }
 
 
-        binding.imagenperfil.setOnClickListener{
+
+        binding.imagenperfil.setOnClickListener {
             val intent = Intent(Intent.ACTION_GET_CONTENT)
             intent.type = "image/*"
-            startActivityForResult(intent,SELECT_ACTIVITY)
+            startActivityForResult(intent, SELECT_ACTIVITY)
+          binding.imagenperfil.setBackgroundColor(Color.WHITE)
+
+
         }
 
 
@@ -129,16 +164,13 @@ class Perfil : AppCompatActivity() {
 
             val numCadena = binding.pesoperfil.text.toString()
             val numEntero = numCadena.toDouble()
-            val numcadenados=binding.alturaperfil.text.toString()
-            val numeroentero2=numcadenados.toDouble()
-            val resultado=numEntero/(numeroentero2*numeroentero2)
+            val numcadenados = binding.alturaperfil.text.toString()
+            val numeroentero2 = numcadenados.toDouble()
+            val resultado = numEntero / (numeroentero2 * numeroentero2)
 
 
 
-
-
-
-                binding.imcperfil.setText(resultado.toString())
+            binding.imcperfil.setText(resultado.toString())
 
 
         }
@@ -147,8 +179,10 @@ class Perfil : AppCompatActivity() {
         binding.info.setOnClickListener {
 
             val alerta = AlertDialog.Builder(this)
-            alerta.setMessage("El IMC (índice de masa corporal) se emplea para determinar si una persona padece sobrepeso, pero no tiene en cuenta el porcentaje de grasa corporal, por lo que no es fiable para diagnosticar la obesidad." +
-                    "¿Quieres informarte mas?")
+            alerta.setMessage(
+                "El IMC (índice de masa corporal) se emplea para determinar si una persona padece sobrepeso, pero no tiene en cuenta el porcentaje de grasa corporal, por lo que no es fiable para diagnosticar la obesidad." +
+                        "¿Quieres informarte mas?"
+            )
                 .setTitle("Alerta")
                 .setCancelable(false)//esto es para que clique fuera del popup de alerta
                 .setPositiveButton(
@@ -156,8 +190,9 @@ class Perfil : AppCompatActivity() {
                     DialogInterface.OnClickListener { dialog, which -> dialog.cancel() })
                 .setNegativeButton(
                     "Aceptar",
-                    DialogInterface.OnClickListener { dia, which -> link=uri.toUri()
-                        val intent=Intent(Intent.ACTION_VIEW,link)
+                    DialogInterface.OnClickListener { dia, which ->
+                        link = uri.toUri()
+                        val intent = Intent(Intent.ACTION_VIEW, link)
                         startActivity(intent)
 
                     })
@@ -166,13 +201,7 @@ class Perfil : AppCompatActivity() {
         }
 
 
-
-
-
-
-
     }
-
 
 
     //con esta funcion controlamos la interacion con el menu y las distintas pantallas con sus funciones
@@ -181,15 +210,15 @@ class Perfil : AppCompatActivity() {
 
             when (item.itemId) {
                 com.example.fitnessapp.R.id.opcion1 -> {
-                    val intent=Intent(this,Perfil::class.java)
+                    val intent = Intent(this, Perfil::class.java)
                     startActivity(intent)
                 }
                 com.example.fitnessapp.R.id.opcion2 -> {
-                    val intent=Intent(this,Home::class.java)
+                    val intent = Intent(this, Home::class.java)
                     startActivity(intent)
                 }
-                com.example.fitnessapp.R.id.opcion3 ->{
-                    val intent=Intent(this,Ajustes::class.java)
+                com.example.fitnessapp.R.id.opcion3 -> {
+                    val intent = Intent(this, Ajustes::class.java)
                     startActivity(intent)
 
                 }
@@ -199,15 +228,19 @@ class Perfil : AppCompatActivity() {
         }
 
 
-    override fun onActivityResult(requestCode : Int, resultCode: Int, data: Intent?){
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 
-        when{
+        when {
             requestCode == SELECT_ACTIVITY && resultCode == Activity.RESULT_OK -> {
                 imageUri = data!!.data
                 binding.imagenperfil.setImageURI(imageUri)
+
+
+
+
             }
         }
-    }
 
+    }
 }

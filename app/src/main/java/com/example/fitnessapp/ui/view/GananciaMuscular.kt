@@ -1,17 +1,25 @@
 package com.example.fitnessapp.ui.view
 
 import android.content.Intent
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.annotation.RequiresApi
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.fitnessapp.R
 import com.example.fitnessapp.data.Perdidapeso
 import com.example.fitnessapp.databinding.ActivityPerdidaPesoBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.firebase.firestore.FirebaseFirestore
+import java.util.*
 
 class GananciaMuscular : AppCompatActivity() {
     lateinit var adapter: PerdidaPesoHolder
     private lateinit var binding: ActivityPerdidaPesoBinding
+
+    private val db = FirebaseFirestore.getInstance()
+
+    @RequiresApi(Build.VERSION_CODES.N)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityPerdidaPesoBinding.inflate(layoutInflater)
@@ -102,6 +110,56 @@ class GananciaMuscular : AppCompatActivity() {
         val lista = binding.recyclerview2
         lista.adapter = adapter
         lista.layoutManager = LinearLayoutManager(this)
+
+        val numero= Random().ints()
+
+        val idejercicio45=numero.toString()
+
+
+        if (0 in listaf) {
+            db.collection("Users").document(email.toString()).collection("RecetasFavoritos").document(idejercicio45).set(
+                hashMapOf("titulo" to datos[0].titulo, "foto" to datos[0].foto,"informacion" to datos[0].informacion, "calorias" to datos[0].calorias, "tiempo" to datos[0].tiempo)
+
+            )
+
+        }
+
+        if(1 in listaf){
+            db.collection("Users").document(email.toString()).collection("RecetasFavoritos").document(idejercicio45).set(
+                hashMapOf("titulo" to datos[1].titulo, "foto" to datos[1].foto,"informacion" to datos[1].informacion, "calorias" to datos[1].calorias, "tiempo" to datos[1].tiempo)
+
+            )
+        }
+
+        if (2 in listaf) {
+            db.collection("Users").document(email.toString()).collection("RecetasFavoritos").document(idejercicio45).set(
+                hashMapOf("titulo" to datos[2].titulo, "foto" to datos[2].foto,"informacion" to datos[2].informacion, "calorias" to datos[2].calorias, "tiempo" to datos[2].tiempo)
+
+            )
+
+        }
+
+        if (3 in listaf) {
+            db.collection("Users").document(email.toString()).collection("RecetasFavoritos")
+                .document(idejercicio45).set(
+                    hashMapOf(
+                        "titulo" to datos[3].titulo,
+                        "foto" to datos[3].foto,
+                        "informacion" to datos[3].informacion,
+                        "calorias" to datos[3].calorias,
+                        "tiempo" to datos[3].tiempo
+                    )
+
+                )
+        }
+
+        if (4 in listaf) {
+            db.collection("Users").document(email.toString()).collection("RecetasFavoritos").document(idejercicio45).set(
+                hashMapOf("titulo" to datos[4].titulo, "foto" to datos[4].foto,"informacion" to datos[4].informacion, "calorias" to datos[4].calorias, "tiempo" to datos[4].tiempo)
+
+            )
+
+        }
 
 
 

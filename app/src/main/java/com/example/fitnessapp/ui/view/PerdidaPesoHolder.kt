@@ -5,29 +5,33 @@ import android.content.SharedPreferences
 import android.graphics.Color
 import android.graphics.drawable.Drawable
 import android.graphics.drawable.Icon
+import android.os.Build
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import androidx.annotation.RequiresApi
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.fitnessapp.R
 import com.example.fitnessapp.data.Perdidapeso
 import com.example.fitnessapp.databinding.ItemRecetaBinding
+import com.google.firebase.firestore.FirebaseFirestore
+import java.util.*
 
 
 val listaf= mutableListOf<Int>()
 var color=false
 
-
-
+val db2 = FirebaseFirestore.getInstance()
 
 class PerdidaPesoHolder(val context: Context,val listaperdidpeso: MutableList<Perdidapeso>) :
     RecyclerView.Adapter<PerdidaPesoHolder.ViewHolder>() {
 
 
 
+    @RequiresApi(Build.VERSION_CODES.N)
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
 
         var binding= ItemRecetaBinding.bind(itemView)
@@ -41,6 +45,8 @@ class PerdidaPesoHolder(val context: Context,val listaperdidpeso: MutableList<Pe
             binding.favorito.setOnClickListener {
 
                 if (true){
+
+
                     binding.favorito.setImageResource(R.drawable.ic_baseline_star_24ye)
                     listaf.add(position)
                     Log.i(TAG_LOGS, listaf.toString())
@@ -52,6 +58,7 @@ class PerdidaPesoHolder(val context: Context,val listaperdidpeso: MutableList<Pe
 
         }
     }
+    @RequiresApi(Build.VERSION_CODES.N)
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PerdidaPesoHolder.ViewHolder {
         var itemView = LayoutInflater.from(context).inflate(R.layout.item_receta, parent, false)
         return PerdidaPesoHolder.ViewHolder(itemView)
@@ -64,6 +71,7 @@ class PerdidaPesoHolder(val context: Context,val listaperdidpeso: MutableList<Pe
         holder.information.text=listaperdidpeso[position].informacion
         holder.calorias.text=listaperdidpeso[position].calorias
         holder.tiempo.text=listaperdidpeso[position].tiempo
+
 
 
     }

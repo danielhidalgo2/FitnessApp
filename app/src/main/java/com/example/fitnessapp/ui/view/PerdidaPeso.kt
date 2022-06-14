@@ -2,19 +2,27 @@ package com.example.fitnessapp.ui.view
 
 import android.content.Context
 import android.content.Intent
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import androidx.annotation.RequiresApi
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.fitnessapp.R
 import com.example.fitnessapp.data.Perdidapeso
 import com.example.fitnessapp.databinding.ActivityPerdidaPesoBinding
 
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.firebase.firestore.FirebaseFirestore
+import java.util.*
+
 val favoritos= mutableListOf<Perdidapeso>()
 class PerdidaPeso : AppCompatActivity() {
     lateinit var adapter: PerdidaPesoHolder
     private lateinit var binding: ActivityPerdidaPesoBinding
+
+    private val db = FirebaseFirestore.getInstance()
+    @RequiresApi(Build.VERSION_CODES.N)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -92,84 +100,55 @@ class PerdidaPeso : AppCompatActivity() {
         lista.adapter = adapter
         lista.layoutManager = LinearLayoutManager(this)
 
+        val numero= Random().ints()
+
+        val idejercicio45=numero.toString()
+
 
         if (0 in listaf) {
-            favoritos.add(datos[0])
-            val sharedPreferences = getSharedPreferences("datosrecetas", Context.MODE_PRIVATE)
+           db.collection("Users").document(email.toString()).collection("RecetasFavoritos").document(idejercicio45).set(
+               hashMapOf("titulo" to datos[0].titulo, "foto" to datos[0].foto,"informacion" to datos[0].informacion, "calorias" to datos[0].calorias, "tiempo" to datos[0].tiempo)
 
-            val editor = sharedPreferences.edit()
-            editor.putString("titulo", datos[0].titulo)
-            editor.putString("foto", datos[0].foto)
-            editor.putString("informacion", datos[0].informacion)
-            editor.putString("calorias", datos[0].calorias)
-            editor.putString("tiempo", datos[0].tiempo)
-            editor.putInt("id",0)
-            editor.apply()
+           )
+
         }
 
         if(1 in listaf){
-            val sharedPreferences = getSharedPreferences("datosrecetas1", Context.MODE_PRIVATE)
-            val editor = sharedPreferences.edit()
-            editor.putString("titulo", datos[1].titulo)
-            editor.putString("foto", datos[1].foto)
-            editor.putString("informacion", datos[1].informacion)
-            editor.putString("calorias", datos[1].calorias)
-            editor.putString("tiempo", datos[1].tiempo)
-            editor.putInt("id",1)
-            editor.apply()
+            db.collection("Users").document(email.toString()).collection("RecetasFavoritos").document(idejercicio45).set(
+                hashMapOf("titulo" to datos[1].titulo, "foto" to datos[1].foto,"informacion" to datos[1].informacion, "calorias" to datos[1].calorias, "tiempo" to datos[1].tiempo)
+
+            )
         }
 
         if (2 in listaf) {
-            favoritos.add(datos[2])
-            val sharedPreferences = getSharedPreferences("datosrecetas", Context.MODE_PRIVATE)
-            val editor = sharedPreferences.edit()
-            editor.putString("titulo", datos[2].titulo)
-            editor.putString("foto", datos[2].foto)
-            editor.putString("informacion", datos[2].informacion)
-            editor.putString("calorias", datos[2].calorias)
-            editor.putString("tiempo", datos[2].tiempo)
-            editor.putInt("id",2)
-            editor.apply()
+            db.collection("Users").document(email.toString()).collection("RecetasFavoritos").document(idejercicio45).set(
+                hashMapOf("titulo" to datos[2].titulo, "foto" to datos[2].foto,"informacion" to datos[2].informacion, "calorias" to datos[2].calorias, "tiempo" to datos[2].tiempo)
+
+            )
+
         }
 
         if (3 in listaf) {
-            favoritos.add(datos[3])
-            val sharedPreferences = getSharedPreferences("datosrecetas", Context.MODE_PRIVATE)
-            val editor = sharedPreferences.edit()
-            editor.putString("titulo", datos[3].titulo)
-            editor.putString("foto", datos[3].foto)
-            editor.putString("informacion", datos[3].informacion)
-            editor.putString("calorias", datos[3].calorias)
-            editor.putString("tiempo", datos[3].tiempo)
-            editor.putInt("id",3)
-            editor.apply()
+            db.collection("Users").document(email.toString()).collection("RecetasFavoritos")
+                .document(idejercicio45).set(
+                hashMapOf(
+                    "titulo" to datos[3].titulo,
+                    "foto" to datos[3].foto,
+                    "informacion" to datos[3].informacion,
+                    "calorias" to datos[3].calorias,
+                    "tiempo" to datos[3].tiempo
+                )
+
+            )
         }
 
-        if (4 in listaf) {
-            favoritos.add(datos[4])
-            val sharedPreferences = getSharedPreferences("datosrecetas", Context.MODE_PRIVATE)
-            val editor = sharedPreferences.edit()
-            editor.putString("titulo", datos[4].titulo)
-            editor.putString("foto", datos[4].foto)
-            editor.putString("informacion", datos[4].informacion)
-            editor.putString("calorias", datos[4].calorias)
-            editor.putString("tiempo", datos[4].tiempo)
-            editor.putInt("id",4)
-            editor.apply()
-        }
+            if (4 in listaf) {
+                db.collection("Users").document(email.toString()).collection("RecetasFavoritos").document(idejercicio45).set(
+                    hashMapOf("titulo" to datos[4].titulo, "foto" to datos[4].foto,"informacion" to datos[4].informacion, "calorias" to datos[4].calorias, "tiempo" to datos[4].tiempo)
 
-        if (5 in listaf) {
-            favoritos.add(datos[5])
-            val sharedPreferences = getSharedPreferences("datosrecetas", Context.MODE_PRIVATE)
-            val editor = sharedPreferences.edit()
-            editor.putString("titulo", datos[5].titulo)
-            editor.putString("foto", datos[5].foto)
-            editor.putString("informacion", datos[5].informacion)
-            editor.putString("calorias", datos[5].calorias)
-            editor.putString("tiempo", datos[5].tiempo)
-            editor.putInt("id",5)
-            editor.apply()
-        }
+                )
+
+            }
 
 
 

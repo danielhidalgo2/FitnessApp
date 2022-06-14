@@ -7,14 +7,18 @@ import android.os.Bundle
 import android.util.Log
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.fitnessapp.R
+import com.example.fitnessapp.data.EjercicioRegistradoTrack
 import com.example.fitnessapp.data.Perdidapeso
 import com.example.fitnessapp.databinding.ActivityAjustesBinding
 import com.example.fitnessapp.databinding.ActivityEstiloSaludableBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.firebase.firestore.FirebaseFirestore
 
 class EstiloSaludable : AppCompatActivity() {
     lateinit var adapter: PerdidaPesoHolder
     private lateinit var binding: ActivityEstiloSaludableBinding
+
+    private val db = FirebaseFirestore.getInstance()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,44 +37,18 @@ class EstiloSaludable : AppCompatActivity() {
 
         var favoritosreal= mutableListOf<Perdidapeso>()
 
-            // In this function we will retrieve data
-            val sharedPreferences = getSharedPreferences("datosrecetas", Context.MODE_PRIVATE)
-        val sharedPreferences1 = getSharedPreferences("datosrecetas1", Context.MODE_PRIVATE)
+        db.collection("Users").document(email.toString()).collection("RecetasFavoritos").get().addOnSuccessListener {
+                documents ->
+            for (document in documents) {
+                favoritosreal.addAll(listOf(Perdidapeso(document.get("titulo")as String,document.get("foto")as String, document.get("informacion")as String,document.get("calorias") as String, document.get("tiempo") as String)))
 
-        val id=sharedPreferences.getInt("id",0)
-        val id1=sharedPreferences1.getInt("id",1)
+            }
 
-
-
-
-
-
-        if (id==0){
-            val titulo = sharedPreferences.getString("titulo", "")
-            val foto=sharedPreferences.getString("foto","")
-            val informacion=sharedPreferences.getString("informacion","")
-            val calorias=sharedPreferences.getString("calorias","")
-            val tiempo=sharedPreferences.getString("tiempo","")
-            favoritosreal.add(Perdidapeso("$titulo","$foto","$informacion","$calorias","$tiempo"))
-
-
-            // Log.d is used for debugging purposes
+            adapter= PerdidaPesoHolder(this, favoritosreal.distinct() as MutableList<Perdidapeso>)
+            val lista = binding.recyclerview66
+            lista.adapter = adapter
+            lista.layoutManager = LinearLayoutManager(this)
         }
-
-        if (id1==1){
-            val titulo = sharedPreferences.getString("titulo", "")
-            val foto=sharedPreferences.getString("foto","")
-            val informacion=sharedPreferences.getString("informacion","")
-            val calorias=sharedPreferences.getString("calorias","")
-            val tiempo=sharedPreferences.getString("tiempo","")
-            favoritosreal.add(Perdidapeso("$titulo","$foto","$informacion","$calorias","$tiempo"))
-
-
-        }
-        adapter= PerdidaPesoHolder(this, favoritosreal)
-        val lista = binding.recyclerview66
-        lista.adapter = adapter
-        lista.layoutManager = LinearLayoutManager(this)
 
 
     }

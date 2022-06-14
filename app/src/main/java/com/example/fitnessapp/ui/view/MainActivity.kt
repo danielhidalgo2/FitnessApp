@@ -1,6 +1,7 @@
 package com.example.fitnessapp.ui.view
 
 import android.content.Intent
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.TextView
@@ -23,6 +24,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
         supportActionBar?.hide()
         setTheme(R.style.Theme_FitnessApp)
+        binding.iniciar.setBackgroundColor(Color.GRAY)
         val gg:TextView= findViewById(R.id.pregunta)
 
         val mitextoU = SpannableString("¿No tienes cuenta en FitnessLife aùn? Crear cuenta")

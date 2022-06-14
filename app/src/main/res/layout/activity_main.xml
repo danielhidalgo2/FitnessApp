@@ -50,6 +50,7 @@
             android:textColor="@color/white"
             android:layout_marginEnd="10dp"></EditText>
         </LinearLayout>
+
         <TextView
             android:id="@+id/passwordtitulo"
             android:layout_width="match_parent"
@@ -90,12 +91,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Iniciar"
+            android:textColor="@color/black"
+            android:backgroundTint="@color/white"
             android:layout_marginTop="15dp"
             android:layout_marginStart="10dp"
-            android:layout_marginEnd="10dp"
-            android:textColor="#7F05D7">
+            android:layout_marginEnd="10dp">
 
         </Button>
+
         <TextView
             android:id="@+id/pregunta"
             android:layout_marginStart="49dp"
@@ -114,7 +117,7 @@
         android:layout_height="117dp"
         android:background="@drawable/microsoftteams_image__1_"
         android:text=" FitnessLife"
-        android:textColor="@color/white"
+        android:textColor="#7F05D7"
         android:textSize="45dp"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"

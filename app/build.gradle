@@ -66,6 +66,9 @@ dependencies {
 
     implementation 'androidx.recyclerview:recyclerview:1.2.1'
 
+    // When using the BoM, you don't specify versions in Firebase library dependencies
+    implementation 'com.google.firebase:firebase-storage'
+
     //circulo de progreso.
     implementation "com.mikhaellopez:circularprogressbar:3.0.3"
 
