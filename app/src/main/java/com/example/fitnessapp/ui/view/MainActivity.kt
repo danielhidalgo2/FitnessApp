@@ -45,9 +45,7 @@ class MainActivity : AppCompatActivity() {
         binding.iniciar.setOnClickListener {
             if(binding.usuario.text.toString().isNotEmpty() &&  binding.password.text.toString().isNotEmpty()){
                 mainViewModel.onCreate(this,binding.usuario.text.toString(),binding.password.text.toString())
-                val intent=Intent(this,Home::class.java)
-                startActivity(intent)
-                finish()
+
             }else{
                 Toast.makeText(this,"Error, Los campos introducidos son incorrectos o invalidos.", Toast.LENGTH_LONG).show()
 

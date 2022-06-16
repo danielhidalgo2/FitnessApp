@@ -3,6 +3,7 @@ package com.example.fitnessapp.ui.viewmodels
 import android.content.Context
 import android.content.Intent
 import android.widget.Toast
+import androidx.core.content.ContextCompat.startActivity
 import androidx.lifecycle.ViewModel
 import com.example.fitnessapp.databinding.ActivityMainBinding
 import com.example.fitnessapp.ui.view.Home
@@ -21,9 +22,12 @@ class MainActivityViewModel: ViewModel() {
             if(it.isSuccessful){
                // showHome(it.result?.user?.email ?:"", ProviderType.BASIC)
                 email =usuario
+                val intent=Intent(context,Home::class.java)
+                context.startActivity(intent)
+
 
             }else{
-                Toast.makeText(context,"error", Toast.LENGTH_LONG).show()
+                Toast.makeText(context,"Error, Los campos introducidos son incorrectos o invalidos.", Toast.LENGTH_LONG).show()
             }
         }
 
