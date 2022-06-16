@@ -4,10 +4,9 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.fitnessapp.R
-import com.example.fitnessapp.data.Objetivosutricion
-import com.example.fitnessapp.databinding.ActivityAjustesBinding
+import com.example.fitnessapp.data.models.Objetivosutricion
 import com.example.fitnessapp.databinding.ActivityEjerciciosBinding
+import com.example.fitnessapp.ui.view.holders.CircuitosHolder
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class Ejercicios : AppCompatActivity() {
@@ -25,7 +24,8 @@ class Ejercicios : AppCompatActivity() {
        bottomNav.setOnNavigationItemSelectedListener(menuseleccion)
 
 
-        val ejercicios= mutableListOf<Objetivosutricion>(Objetivosutricion("https://i.blogs.es/6c76f5/istock-1172740018/1366_2000.jpeg","Circuito FullBody en casa"),
+        val ejercicios= mutableListOf<Objetivosutricion>(
+            Objetivosutricion("https://i.blogs.es/6c76f5/istock-1172740018/1366_2000.jpeg","Circuito FullBody en casa"),
         Objetivosutricion("https://content21.sabervivirtv.com/medio/2022/02/14/ejercicio-cardio-perder-peso_fb3b20b9_1024x576.jpg","Andar Libre"),
             Objetivosutricion(
                 "https://static.abc.es/media/MM/2021/11/17/crunch-lateral-kLzC--1248x900@abc.jpg","Circuito de Torso"),
@@ -46,18 +46,29 @@ class Ejercicios : AppCompatActivity() {
                 com.example.fitnessapp.R.id.opcion1 -> {
                     val intent= Intent(this,Perfil::class.java)
                     startActivity(intent)
+                    finish()
+
+
+
                 }
                 com.example.fitnessapp.R.id.opcion2 -> {
+
                     val intent= Intent(this,Home::class.java)
                     startActivity(intent)
+                    finish()
+
                 }
                 com.example.fitnessapp.R.id.opcion3 ->{
                     val intent= Intent(this,Ajustes::class.java)
                     startActivity(intent)
+                    finish()
+
 
                 }
             }
 
+
             true
         }
+
 }

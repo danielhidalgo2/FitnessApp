@@ -1,4 +1,4 @@
-package com.example.fitnessapp.ui.view
+package com.example.fitnessapp.ui.view.holders
 
 import android.content.Context
 import android.content.Intent
@@ -8,10 +8,13 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.fitnessapp.R
-import com.example.fitnessapp.data.DatosEjercicios
+import com.example.fitnessapp.data.models.DatosEjercicios
 import com.example.fitnessapp.databinding.ItemEjercicicosBinding
+import com.example.fitnessapp.ui.view.Ejercicios
+import com.example.fitnessapp.ui.view.Nutricion
+import com.example.fitnessapp.ui.view.Track
 
- public lateinit var context2:Context
+public lateinit var context2:Context
 
 
 class EjerciciosHolder(val context: Context , val ejercicioslist: MutableList<DatosEjercicios> ) :

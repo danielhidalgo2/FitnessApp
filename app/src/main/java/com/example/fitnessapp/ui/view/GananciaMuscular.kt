@@ -6,9 +6,10 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.annotation.RequiresApi
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.fitnessapp.R
-import com.example.fitnessapp.data.Perdidapeso
+import com.example.fitnessapp.data.models.Perdidapeso
 import com.example.fitnessapp.databinding.ActivityPerdidaPesoBinding
+import com.example.fitnessapp.ui.view.holders.PerdidaPesoHolder
+import com.example.fitnessapp.ui.view.holders.listaf
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.firestore.FirebaseFirestore
 import java.util.*
@@ -18,6 +19,7 @@ class GananciaMuscular : AppCompatActivity() {
     private lateinit var binding: ActivityPerdidaPesoBinding
 
     private val db = FirebaseFirestore.getInstance()
+    lateinit var datos:MutableList<Perdidapeso>
 
     @RequiresApi(Build.VERSION_CODES.N)
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -29,7 +31,7 @@ class GananciaMuscular : AppCompatActivity() {
         val bottomNav = binding.toolbar
         //le damos soporte con la funcion creada
         bottomNav.setOnNavigationItemSelectedListener(menuseleccion)
-        val datos= mutableListOf<Perdidapeso>(
+         datos= mutableListOf<Perdidapeso>(
             Perdidapeso("POLLO PICATE CON CUSCÚS","https://blogscdn.thehut.net/app/uploads/sites/450/2020/01/Pollo-picante-con-cusc%C3%BAs_1578482471.jpg",
                         "Esta receta de pollo picante con cuscús es una deliciosa y sencilla alternativa al típico arroz con pollo de siempre. Podrás prepararla el domingo por la tarde en pocos minutos y tendrás comidas para toda la semana.\n"+
                         " INGREDIENTES:\n" +
@@ -173,23 +175,80 @@ class GananciaMuscular : AppCompatActivity() {
                 com.example.fitnessapp.R.id.opcion1 -> {
                     val intent= Intent(this,Perfil::class.java)
                     startActivity(intent)
+                    finish()
 
                 }
                 com.example.fitnessapp.R.id.opcion2 -> {
                     val intent= Intent(this,Home::class.java)
                     startActivity(intent)
                     item.isVisible=true
+                    finish()
                 }
                 com.example.fitnessapp.R.id.opcion3 ->{
                     val intent= Intent(this,Ajustes::class.java)
                     startActivity(intent)
                     item.isVisible=true
+                    finish()
 
                 }
             }
 
             true
         }
+
+
+    override fun onStop() {
+        super.onStop()
+        val numero= Random().ints()
+
+        val idejercicio45=numero.toString()
+
+
+        if (0 in listaf) {
+            db.collection("Users").document(email.toString()).collection("RecetasFavoritos").document(idejercicio45).set(
+                hashMapOf("titulo" to datos[0].titulo, "foto" to datos[0].foto,"informacion" to datos[0].informacion, "calorias" to datos[0].calorias, "tiempo" to datos[0].tiempo)
+
+            )
+
+        }
+
+        if(1 in listaf){
+            db.collection("Users").document(email.toString()).collection("RecetasFavoritos").document(idejercicio45).set(
+                hashMapOf("titulo" to datos[1].titulo, "foto" to datos[1].foto,"informacion" to datos[1].informacion, "calorias" to datos[1].calorias, "tiempo" to datos[1].tiempo)
+
+            )
+        }
+
+        if (2 in listaf) {
+            db.collection("Users").document(email.toString()).collection("RecetasFavoritos").document(idejercicio45).set(
+                hashMapOf("titulo" to datos[2].titulo, "foto" to datos[2].foto,"informacion" to datos[2].informacion, "calorias" to datos[2].calorias, "tiempo" to datos[2].tiempo)
+
+            )
+
+        }
+
+        if (3 in listaf) {
+            db.collection("Users").document(email.toString()).collection("RecetasFavoritos")
+                .document(idejercicio45).set(
+                    hashMapOf(
+                        "titulo" to datos[3].titulo,
+                        "foto" to datos[3].foto,
+                        "informacion" to datos[3].informacion,
+                        "calorias" to datos[3].calorias,
+                        "tiempo" to datos[3].tiempo
+                    )
+
+                )
+        }
+
+        if (4 in listaf) {
+            db.collection("Users").document(email.toString()).collection("RecetasFavoritos").document(idejercicio45).set(
+                hashMapOf("titulo" to datos[4].titulo, "foto" to datos[4].foto,"informacion" to datos[4].informacion, "calorias" to datos[4].calorias, "tiempo" to datos[4].tiempo)
+
+            )
+
+        }
+    }
 
     //setContentView(R.layout.activity_ganancia_muscular)
     }

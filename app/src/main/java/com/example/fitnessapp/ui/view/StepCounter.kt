@@ -1,5 +1,6 @@
 package com.example.fitnessapp.ui.view
 
+import android.app.Activity
 import android.app.AlertDialog
 import android.content.Context
 import android.content.DialogInterface
@@ -13,6 +14,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.util.Log.i
+import android.view.KeyEvent
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
@@ -53,14 +55,18 @@ class StepCounter : AppCompatActivity(), SensorEventListener{
         setContentView(binding.root)
 
 
+
         verificarpermis()
+        loadData()
+
+
+
 
     }
 
     override fun onResume() {
         super.onResume()
         running = true
-
         // Returns the number of steps taken by the user since the last reboot while activated
         // This sensor requires permission android.permission.ACTIVITY_RECOGNITION.
         // So don't forget to add the following permission in AndroidManifest.xml present in manifest folder of the app.
@@ -74,6 +80,8 @@ class StepCounter : AppCompatActivity(), SensorEventListener{
             // Rate suitable for the user interface
             sensorManager?.registerListener(this, stepSensor, SensorManager.SENSOR_DELAY_NORMAL)
         }
+
+
 
     }
 
@@ -156,8 +164,7 @@ class StepCounter : AppCompatActivity(), SensorEventListener{
                 android.Manifest.permission.ACTIVITY_RECOGNITION) != PackageManager.PERMISSION_GRANTED) {
             aceptarelpermisousuario()
         } else {
-            //los permisos estan aceptados
-
+            aceptarelpermisousuario()
         }
     }
 
@@ -181,9 +188,21 @@ class StepCounter : AppCompatActivity(), SensorEventListener{
                 .show()
         } else {
             //El usuario nunca ha aceptado ni rechazado, así que le pedimos que acepte el permiso.
-            ActivityCompat.requestPermissions(this,
-                arrayOf( android.Manifest.permission.ACTIVITY_RECOGNITION),
-                ACTIVITY_RECOGNITION_CODE)
+            val alerta = AlertDialog.Builder(this)
+            alerta.setMessage("Los permisos de actividad fisica no han sido aceptados anteriormente.¿Desea activarlo para comenzar a contabilizar los paos?.")
+                .setTitle("Alerta")
+                .setCancelable(false)//esto es para que clique fuera del popup de alerta
+                .setNegativeButton(
+                    "Cerrar",
+                    DialogInterface.OnClickListener { dialog, which -> dialog.cancel() })
+                .setNegativeButton(
+                    "Confirmar",
+                    DialogInterface.OnClickListener { dialog, which ->  ActivityCompat.requestPermissions(this,
+                        arrayOf( android.Manifest.permission.ACTIVITY_RECOGNITION),
+                        ACTIVITY_RECOGNITION_CODE) })
+                .create()
+                .show()
+
         }
     }
 
@@ -216,17 +235,39 @@ class StepCounter : AppCompatActivity(), SensorEventListener{
 
                         val intent = Intent(this,Ejercicios::class.java)
                         startActivity(intent)
+                        finish()
 
                     }
                 } else {
-                    //El usuario ha rechazado el permiso, podemos desactivar la funcionalidad o mostrar una vista/diálogo.
-                }
+//El usuario nunca ha aceptado ni rechazado, así que le pedimos que acepte el permiso.
+                    ActivityCompat.requestPermissions(this,
+                        arrayOf( android.Manifest.permission.ACTIVITY_RECOGNITION),
+                        ACTIVITY_RECOGNITION_CODE)                }
                 return
             }
             else -> {
                 // Este else lo dejamos por si sale un permiso que no teníamos controlado.
             }
         }
+    }
+
+
+    override fun onKeyDown(keyCode: Int, event: KeyEvent?): Boolean {
+        //replaces the default 'Back' button action
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+            val alerta = AlertDialog.Builder(this)
+            alerta.setMessage("¿Quieres terminar el ejercicio? No se guardara el entreno.")
+                .setTitle("Alerta")
+                .setCancelable(false)//esto es para que clique fuera del popup de alerta
+                .setNegativeButton(
+                    "Cerrar",
+                    DialogInterface.OnClickListener { dialog, which -> dialog.cancel() })
+                .setPositiveButton("confirmar", DialogInterface.OnClickListener { dialog, which -> finish() })
+
+                .create()
+                .show()
+        }
+        return true
     }
 }
 

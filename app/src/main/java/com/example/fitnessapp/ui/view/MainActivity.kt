@@ -8,15 +8,20 @@ import android.widget.TextView
 import android.text.SpannableString
 import android.text.style.UnderlineSpan
 import android.widget.Toast
+import androidx.activity.viewModels
 import com.example.fitnessapp.R
 import com.example.fitnessapp.databinding.ActivityMainBinding
 import com.example.fitnessapp.databinding.ActivityRegistroBinding
+import com.example.fitnessapp.ui.viewmodels.MainActivityViewModel
 import com.google.firebase.auth.FirebaseAuth
 
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
+
+    // se encargara de conectar la activity con nuestro Viewmodel
+    private  val mainViewModel: MainActivityViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,7 +37,6 @@ class MainActivity : AppCompatActivity() {
         gg.setText(mitextoU)
 
 
-
         gg.setOnClickListener {
             val clase=Intent(this, Registro::class.java)
             startActivity(clase)
@@ -40,16 +44,12 @@ class MainActivity : AppCompatActivity() {
 
         binding.iniciar.setOnClickListener {
             if(binding.usuario.text.toString().isNotEmpty() &&  binding.password.text.toString().isNotEmpty()){
-                FirebaseAuth.getInstance().signInWithEmailAndPassword(binding.usuario.text.toString(),binding.password.text.toString()).addOnCompleteListener {
-                    if(it.isSuccessful){
-                        showHome(it.result?.user?.email ?:"",ProviderType.BASIC)
-                        email=binding.usuario.text.toString()
-
-                    }else{
-                        Toast.makeText(this,"error", Toast.LENGTH_LONG).show()
-                    }
-                }
-                //esta funcion es para que nos notifique si se ha realizado correctamentre el registro
+                mainViewModel.onCreate(this,binding.usuario.text.toString(),binding.password.text.toString())
+                val intent=Intent(this,Home::class.java)
+                startActivity(intent)
+                finish()
+            }else{
+                Toast.makeText(this,"Error, Los campos introducidos son incorrectos o invalidos.", Toast.LENGTH_LONG).show()
 
             }
         }
@@ -60,6 +60,5 @@ class MainActivity : AppCompatActivity() {
             putExtra("email",email)
             putExtra("proveedor",provider.name)
         }
-        startActivity(intent)
     }
 }

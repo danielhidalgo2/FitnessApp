@@ -61,6 +61,7 @@ var apellido: String? = null
                 FirebaseAuth.getInstance().createUserWithEmailAndPassword(binding.correoRegistro.text.toString(),binding.contraseARegistro.text.toString()).addOnCompleteListener {
                     if(it.isSuccessful){
                        showHome(it.result?.user?.email ?:"",ProviderType.BASIC)
+                        finish()
 
                     }else{
                         Toast.makeText(this,"error",Toast.LENGTH_LONG).show()

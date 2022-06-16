@@ -1,19 +1,12 @@
-package com.example.fitnessapp.ui.view
+package com.example.fitnessapp.ui.view.holders
 
-import android.app.AlertDialog
 import android.content.Context
-import android.content.DialogInterface
-import android.graphics.drawable.Drawable
-import android.graphics.drawable.Icon
-import android.media.Image
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.graphics.drawable.toDrawable
 import androidx.recyclerview.widget.RecyclerView
 import com.example.fitnessapp.R
-import com.example.fitnessapp.data.EjercicioRegistradoTrack
-import com.example.fitnessapp.data.Perdidapeso
+import com.example.fitnessapp.data.models.EjercicioRegistradoTrack
 import com.example.fitnessapp.databinding.ItemTrackEjercicioBinding
 var icono: Int =R.drawable.jj
 var icono3: Int =R.drawable.flame

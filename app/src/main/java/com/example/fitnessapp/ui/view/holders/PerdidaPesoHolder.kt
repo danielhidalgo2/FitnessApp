@@ -1,24 +1,19 @@
-package com.example.fitnessapp.ui.view
+package com.example.fitnessapp.ui.view.holders
 
 import android.content.Context
-import android.content.SharedPreferences
-import android.graphics.Color
-import android.graphics.drawable.Drawable
-import android.graphics.drawable.Icon
 import android.os.Build
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import androidx.annotation.RequiresApi
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.fitnessapp.R
-import com.example.fitnessapp.data.Perdidapeso
+import com.example.fitnessapp.data.models.Perdidapeso
 import com.example.fitnessapp.databinding.ItemRecetaBinding
+import com.example.fitnessapp.ui.view.TAG_LOGS
 import com.google.firebase.firestore.FirebaseFirestore
-import java.util.*
 
 
 val listaf= mutableListOf<Int>()

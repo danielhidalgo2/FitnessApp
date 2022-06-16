@@ -12,6 +12,7 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.ImageView
 import android.widget.Toast
+import androidx.activity.viewModels
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
@@ -19,6 +20,8 @@ import androidx.core.content.ContextCompat
 import androidx.core.net.toUri
 import com.example.fitnessapp.R
 import com.example.fitnessapp.databinding.ActivityPerfilBinding
+import com.example.fitnessapp.ui.viewmodels.MainActivityViewModel
+import com.example.fitnessapp.ui.viewmodels.PerfilviewModel
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.firestore.FirebaseFirestore
@@ -43,6 +46,7 @@ class Perfil : AppCompatActivity() {
     private val db = FirebaseFirestore.getInstance()
     private lateinit var database: DatabaseReference
 
+
     @RequiresApi(Build.VERSION_CODES.N)
     val numero = Random().ints()
 
@@ -52,6 +56,10 @@ class Perfil : AppCompatActivity() {
     var uri: String = "https://www.who.int/es/news-room/fact-sheets/detail/obesity-and-overweight"
     lateinit var link: Uri
     val estado = false
+
+
+    private  val mainViewModel: PerfilviewModel by viewModels()
+
 
 
 
@@ -68,13 +76,12 @@ class Perfil : AppCompatActivity() {
 
 
 
-
-
         db.collection("Users").document(email.toString()).get().addOnSuccessListener {
-            binding.nombreperfil.setText("Hola de nuevo " + it.get("nombre") as String + " !")
+            binding.nombreperfil.setText ("Hola de nuevo " + it.get("nombre") as String + " !")
+            binding.correoperfil.setText(email.toString())
+
+
         }
-
-
 
 
 
@@ -128,19 +135,19 @@ class Perfil : AppCompatActivity() {
                         ).show()
                     }
 
-                val folder: StorageReference = FirebaseStorage.getInstance().getReference()
-                val referencia:StorageReference=folder.child("User").child(imageUri!!.lastPathSegment.toString())
-                Log.i(TAG_LOGS,referencia.toString())
+               // val folder: StorageReference = FirebaseStorage.getInstance().getReference()
+//                val referencia:StorageReference=folder.child("User").child(imageUri!!.lastPathSegment.toString())
+                //Log.i(TAG_LOGS,referencia.toString())
 
 
 
-                referencia.putFile(imageUri!!).addOnSuccessListener {
+                /*referencia.putFile(imageUri!!).addOnSuccessListener {
                     Toast.makeText(this, "se ha guardado", Toast.LENGTH_LONG).show()
                     Log.i(TAG_LOGS,it.toString())
 
                 }.addOnCanceledListener {
                     Toast.makeText(this, "no ha guardado", Toast.LENGTH_LONG).show()
-                }
+                }*/
 
             }
 
@@ -200,7 +207,6 @@ class Perfil : AppCompatActivity() {
                 .show()
         }
 
-
     }
 
 
@@ -212,14 +218,17 @@ class Perfil : AppCompatActivity() {
                 com.example.fitnessapp.R.id.opcion1 -> {
                     val intent = Intent(this, Perfil::class.java)
                     startActivity(intent)
+                    finish()
                 }
                 com.example.fitnessapp.R.id.opcion2 -> {
                     val intent = Intent(this, Home::class.java)
                     startActivity(intent)
+                    finish()
                 }
                 com.example.fitnessapp.R.id.opcion3 -> {
                     val intent = Intent(this, Ajustes::class.java)
                     startActivity(intent)
+                    finish()
 
                 }
             }

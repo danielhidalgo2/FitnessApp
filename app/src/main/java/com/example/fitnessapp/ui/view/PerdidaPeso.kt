@@ -1,16 +1,15 @@
 package com.example.fitnessapp.ui.view
 
-import android.content.Context
 import android.content.Intent
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import androidx.annotation.RequiresApi
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.fitnessapp.R
-import com.example.fitnessapp.data.Perdidapeso
+import com.example.fitnessapp.data.models.Perdidapeso
 import com.example.fitnessapp.databinding.ActivityPerdidaPesoBinding
+import com.example.fitnessapp.ui.view.holders.PerdidaPesoHolder
+import com.example.fitnessapp.ui.view.holders.listaf
 
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.firestore.FirebaseFirestore
@@ -165,17 +164,20 @@ class PerdidaPeso : AppCompatActivity() {
                 com.example.fitnessapp.R.id.opcion1 -> {
                     val intent= Intent(this,Perfil::class.java)
                     startActivity(intent)
+                    finish()
 
                 }
                 com.example.fitnessapp.R.id.opcion2 -> {
                     val intent= Intent(this,Home::class.java)
                     startActivity(intent)
                     item.isVisible=true
+                    finish()
                 }
                 com.example.fitnessapp.R.id.opcion3 ->{
                     val intent= Intent(this,Ajustes::class.java)
                     startActivity(intent)
                     item.isVisible=true
+                    finish()
 
                 }
             }

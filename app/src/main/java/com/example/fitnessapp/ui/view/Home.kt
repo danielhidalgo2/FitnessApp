@@ -3,11 +3,10 @@ package com.example.fitnessapp.ui.view
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.fitnessapp.R
-import com.example.fitnessapp.data.DatosEjercicios
+import com.example.fitnessapp.data.models.DatosEjercicios
 import com.example.fitnessapp.databinding.ActivityHomeBinding
+import com.example.fitnessapp.ui.view.holders.EjerciciosHolder
 
 
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -28,7 +27,8 @@ class Home : AppCompatActivity() {
         //le damos soporte con la funcion creada
         bottomNav.setOnNavigationItemSelectedListener(menuseleccion)
 
-        val datos= mutableListOf<DatosEjercicios>(DatosEjercicios("https://static1.abc.es/media/bienestar/2020/10/14/entrenamiento-funcional-kZcD--620x349@abc.jpeg",1),
+        val datos= mutableListOf<DatosEjercicios>(
+            DatosEjercicios("https://static1.abc.es/media/bienestar/2020/10/14/entrenamiento-funcional-kZcD--620x349@abc.jpeg",1),
             DatosEjercicios("https://concepto.de/wp-content/uploads/2015/03/nutricion-1-e1550713442289.jpg",2),
             DatosEjercicios("https://todobulletjournal.com/wp-content/uploads/registro-de-ejercicio-6.jpg",3)
         )
@@ -54,17 +54,20 @@ class Home : AppCompatActivity() {
                 com.example.fitnessapp.R.id.opcion1 -> {
                     val intent= Intent(this,Perfil::class.java)
                     startActivity(intent)
+                    finish()
 
                 }
                 com.example.fitnessapp.R.id.opcion2 -> {
                     val intent= Intent(this,Home::class.java)
                     startActivity(intent)
                     item.isVisible=true
+                    finish()
                 }
                 com.example.fitnessapp.R.id.opcion3 ->{
                     val intent= Intent(this,Ajustes::class.java)
                     startActivity(intent)
                     item.isVisible=true
+                    finish()
 
                 }
             }

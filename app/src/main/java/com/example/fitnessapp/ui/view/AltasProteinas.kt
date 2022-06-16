@@ -6,9 +6,10 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.annotation.RequiresApi
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.fitnessapp.R
-import com.example.fitnessapp.data.Perdidapeso
+import com.example.fitnessapp.data.models.Perdidapeso
 import com.example.fitnessapp.databinding.ActivityAltasProteinasBinding
+import com.example.fitnessapp.ui.view.holders.PerdidaPesoHolder
+import com.example.fitnessapp.ui.view.holders.listaf
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.firestore.FirebaseFirestore
 import java.util.*
@@ -16,6 +17,7 @@ import java.util.*
 class AltasProteinas : AppCompatActivity() {
     private lateinit var binding:ActivityAltasProteinasBinding
     lateinit var adapter: PerdidaPesoHolder
+    lateinit var datos:MutableList<Perdidapeso>
 
     private val db = FirebaseFirestore.getInstance()
 
@@ -31,7 +33,7 @@ class AltasProteinas : AppCompatActivity() {
         bottomNav.setOnNavigationItemSelectedListener(menuseleccion)
 
 
-        val datos= mutableListOf<Perdidapeso>(
+         datos= mutableListOf<Perdidapeso>(
             Perdidapeso("HUEVOS REVUELTOS CON HESPINACAS","https://cdn2.cocinadelirante.com/sites/default/files/styles/gallerie/public/images/2020/06/receta-huevos-altos-en-proteina1.jpg","Ingredientesenviar por correo, se abrirá en otra pestañaimprimir , se abrirá en otra pestaña\n" +
                     "2 huevos ligeramente batidos \n" +
                     "2 cucharadas de queso parmesano \n" +
@@ -155,18 +157,77 @@ class AltasProteinas : AppCompatActivity() {
                 com.example.fitnessapp.R.id.opcion1 -> {
                     val intent= Intent(this,Perfil::class.java)
                     startActivity(intent)
+                    finish()
                 }
                 com.example.fitnessapp.R.id.opcion2 -> {
                     val intent= Intent(this,Home::class.java)
                     startActivity(intent)
+                    finish()
                 }
                 com.example.fitnessapp.R.id.opcion3 ->{
                     val intent= Intent(this,Ajustes::class.java)
                     startActivity(intent)
+                    finish()
 
                 }
             }
 
             true
         }
+
+
+    @RequiresApi(Build.VERSION_CODES.N)
+    override fun onStop() {
+        super.onStop()
+
+        val numero= Random().ints()
+
+        val idejercicio45=numero.toString()
+
+
+        if (0 in listaf) {
+            db.collection("Users").document(email.toString()).collection("RecetasFavoritos").document(idejercicio45).set(
+                hashMapOf("titulo" to datos[0].titulo, "foto" to datos[0].foto,"informacion" to datos[0].informacion, "calorias" to datos[0].calorias, "tiempo" to datos[0].tiempo)
+
+            )
+
+        }
+
+        if(1 in listaf){
+            db.collection("Users").document(email.toString()).collection("RecetasFavoritos").document(idejercicio45).set(
+                hashMapOf("titulo" to datos[1].titulo, "foto" to datos[1].foto,"informacion" to datos[1].informacion, "calorias" to datos[1].calorias, "tiempo" to datos[1].tiempo)
+
+            )
+        }
+
+        if (2 in listaf) {
+            db.collection("Users").document(email.toString()).collection("RecetasFavoritos").document(idejercicio45).set(
+                hashMapOf("titulo" to datos[2].titulo, "foto" to datos[2].foto,"informacion" to datos[2].informacion, "calorias" to datos[2].calorias, "tiempo" to datos[2].tiempo)
+
+            )
+
+        }
+
+        if (3 in listaf) {
+            db.collection("Users").document(email.toString()).collection("RecetasFavoritos")
+                .document(idejercicio45).set(
+                    hashMapOf(
+                        "titulo" to datos[3].titulo,
+                        "foto" to datos[3].foto,
+                        "informacion" to datos[3].informacion,
+                        "calorias" to datos[3].calorias,
+                        "tiempo" to datos[3].tiempo
+                    )
+
+                )
+        }
+
+        if (4 in listaf) {
+            db.collection("Users").document(email.toString()).collection("RecetasFavoritos").document(idejercicio45).set(
+                hashMapOf("titulo" to datos[4].titulo, "foto" to datos[4].foto,"informacion" to datos[4].informacion, "calorias" to datos[4].calorias, "tiempo" to datos[4].tiempo)
+
+            )
+
+        }
+    }
 }

@@ -4,9 +4,9 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.fitnessapp.R
-import com.example.fitnessapp.data.Objetivosutricion
+import com.example.fitnessapp.data.models.Objetivosutricion
 import com.example.fitnessapp.databinding.ActivityNutricionBinding
+import com.example.fitnessapp.ui.view.holders.NutricionHolder
 
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
@@ -48,14 +48,17 @@ class Nutricion : AppCompatActivity() {
                 com.example.fitnessapp.R.id.opcion1 -> {
                     val intent= Intent(this,Perfil::class.java)
                     startActivity(intent)
+                    finish()
                 }
                 com.example.fitnessapp.R.id.opcion2 -> {
                     val intent= Intent(this,Home::class.java)
                     startActivity(intent)
+                    finish()
                 }
                 com.example.fitnessapp.R.id.opcion3 ->{
                     val intent= Intent(this,Ajustes::class.java)
                     startActivity(intent)
+                    finish()
 
                 }
             }

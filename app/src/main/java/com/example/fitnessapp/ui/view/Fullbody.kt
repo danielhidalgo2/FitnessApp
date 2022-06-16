@@ -1,11 +1,14 @@
 package com.example.fitnessapp.ui.view
 
 
+import android.app.AlertDialog
+import android.content.DialogInterface
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.util.Log
+import android.view.KeyEvent
 import android.view.View
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
@@ -186,11 +189,19 @@ class Fullbody : AppCompatActivity() {
 
             val intent =Intent(this,Ejercicios::class.java)
             startActivity(intent)
+            finish()
 
 
         }
 
 
     }
+    override fun onBackPressed() {
+        super.onBackPressed()
+
+
+
+    }
+
 
 }

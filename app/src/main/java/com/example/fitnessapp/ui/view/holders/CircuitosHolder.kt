@@ -1,4 +1,4 @@
-package com.example.fitnessapp.ui.view
+package com.example.fitnessapp.ui.view.holders
 
 import android.app.AlertDialog
 import android.content.Context
@@ -9,12 +9,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.bumptech.glide.Glide.init
 import com.example.fitnessapp.R
-import com.example.fitnessapp.data.DatosEjercicios
-import com.example.fitnessapp.data.Objetivosutricion
-import com.example.fitnessapp.databinding.ItemEjercicicosBinding
+import com.example.fitnessapp.data.models.Objetivosutricion
 import com.example.fitnessapp.databinding.ItemObjetivosRecetaBinding
+import com.example.fitnessapp.ui.view.Fullbody
+import com.example.fitnessapp.ui.view.StepCounter
 
 class CircuitosHolder(val context: Context, val ejercicioslist: MutableList<Objetivosutricion> ) :
     RecyclerView.Adapter<CircuitosHolder.ViewHolder>() {

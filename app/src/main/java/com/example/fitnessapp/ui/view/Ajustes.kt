@@ -55,14 +55,17 @@ private val menuseleccion =
             com.example.fitnessapp.R.id.opcion1 -> {
                 val intent= Intent(this,Perfil::class.java)
                 startActivity(intent)
+                finish()
             }
             com.example.fitnessapp.R.id.opcion2 -> {
                 val intent= Intent(this,Home::class.java)
                 startActivity(intent)
+                finish()
             }
             com.example.fitnessapp.R.id.opcion3 ->{
                 val intent= Intent(this,Ajustes::class.java)
                 startActivity(intent)
+                finish()
 
             }
         }

@@ -6,17 +6,15 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.fitnessapp.R
-import com.example.fitnessapp.data.EjercicioRegistradoTrack
+import com.example.fitnessapp.data.models.EjercicioRegistradoTrack
 import com.example.fitnessapp.databinding.ActivityTrackBinding
+import com.example.fitnessapp.ui.view.holders.TrackHolder
 
 
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.firestore.FirebaseFirestore
-import com.google.firebase.firestore.ktx.toObjects
 
 
 class Track : AppCompatActivity() {
@@ -78,17 +76,20 @@ class Track : AppCompatActivity() {
                 com.example.fitnessapp.R.id.opcion1 -> {
                     val intent= Intent(this,Perfil::class.java)
                     startActivity(intent)
+                    finish()
 
                 }
                 com.example.fitnessapp.R.id.opcion2 -> {
                     val intent= Intent(this,Home::class.java)
                     startActivity(intent)
                     item.isVisible=true
+                    finish()
                 }
                 com.example.fitnessapp.R.id.opcion3 ->{
                     val intent= Intent(this,Ajustes::class.java)
                     startActivity(intent)
                     item.isVisible=true
+                    finish()
 
                 }
             }
